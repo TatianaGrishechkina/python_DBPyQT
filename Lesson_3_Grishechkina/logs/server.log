@@ -1,0 +1,187 @@
+2021-04-05 23:01:23,238 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:15:59,300 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:15:59,418 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60462)
+2021-04-05 23:15:59,424 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60463)
+2021-04-05 23:15:59,432 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60464)
+2021-04-05 23:15:59,933 INFO server.py Есть сообщения от клиентов
+2021-04-05 23:16:00,074 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04249C70>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-04-05 23:16:00,075 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x04249928>, <common.json_messenger.JSONMessenger object at 0x04249C70>, {'action': 'presence', 'time': 1617653759.477376, 'user': {'account_name': 'DASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-04-05 23:16:00,076 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617653759.477376, 'user': {'account_name': 'DASHA'}}
+2021-04-05 23:16:00,123 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-05 23:16:00,127 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04249C70>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-04-05 23:16:00,129 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04249C10>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-04-05 23:16:00,131 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x04249928>, <common.json_messenger.JSONMessenger object at 0x04249C10>, {'action': 'presence', 'time': 1617653759.478376, 'user': {'account_name': 'MASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-04-05 23:16:00,131 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617653759.478376, 'user': {'account_name': 'MASHA'}}
+2021-04-05 23:16:00,168 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-05 23:16:00,171 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04249C10>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-04-05 23:16:00,173 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04249A48>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-04-05 23:16:00,175 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x04249928>, <common.json_messenger.JSONMessenger object at 0x04249A48>, {'action': 'presence', 'time': 1617653759.4823744, 'user': {'account_name': 'GLASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-04-05 23:16:00,175 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617653759.4823744, 'user': {'account_name': 'GLASHA'}}
+2021-04-05 23:16:00,210 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-05 23:16:00,212 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04249A48>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-04-05 23:37:06,915 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:37:06,917 CRITICAL server.py 'builtin_function_or_method' object has no attribute 'sleep'
+2021-04-05 23:37:12,129 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:37:12,131 CRITICAL server.py 'builtin_function_or_method' object has no attribute 'sleep'
+2021-04-05 23:38:49,585 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:40:42,062 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:41:22,757 INFO server.py Установлено соединение с ПК ('127.0.0.1', 50051)
+2021-04-05 23:41:23,258 INFO server.py Есть сообщения от клиентов
+2021-04-05 23:41:23,390 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x041984D8>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:41:23,393 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x041989B8>, <common.json_messenger.JSONMessenger object at 0x041984D8>, {'action': 'presence', 'time': 1617655282.7949412, 'user': {'account_name': 'sdflj'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:41:23,393 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617655282.7949412, 'user': {'account_name': 'sdflj'}}
+2021-04-05 23:41:23,398 INFO server.py Ошибка при получении сообщения: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 19988 and this is thread id 31336.
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT "Chat_Users".id AS "Chat_Users_id", "Chat_Users".name AS "Chat_Users_name" 
+FROM "Chat_Users" 
+WHERE "Chat_Users".name = ?) AS anon_1]
+[parameters: [{}]]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-05 23:42:18,982 INFO server.py Установлено соединение с ПК ('127.0.0.1', 50313)
+2021-04-05 23:42:19,482 INFO server.py Есть сообщения от клиентов
+2021-04-05 23:42:19,484 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04198B80>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:42:19,487 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x041989B8>, <common.json_messenger.JSONMessenger object at 0x04198B80>, {'action': 'presence', 'time': 1617655339.0214236, 'user': {'account_name': 'DASHA'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:42:19,487 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617655339.0214236, 'user': {'account_name': 'DASHA'}}
+2021-04-05 23:42:19,488 INFO server.py Ошибка при получении сообщения: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 19988 and this is thread id 31336.
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT "Chat_Users".id AS "Chat_Users_id", "Chat_Users".name AS "Chat_Users_name" 
+FROM "Chat_Users" 
+WHERE "Chat_Users".name = ?) AS anon_1]
+[parameters: [{}]]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-05 23:48:20,901 INFO server.py Установлено соединение с ПК ('127.0.0.1', 51877)
+2021-04-05 23:48:21,402 INFO server.py Есть сообщения от клиентов
+2021-04-05 23:48:21,405 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x046D5C40>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:48:21,407 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x041989B8>, <common.json_messenger.JSONMessenger object at 0x046D5C40>, {'action': 'presence', 'time': 1617655700.939415, 'user': {'account_name': 'RARARA'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:48:21,407 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617655700.939415, 'user': {'account_name': 'RARARA'}}
+2021-04-05 23:48:21,408 INFO server.py Ошибка при получении сообщения: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 19988 and this is thread id 31336.
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT "Chat_Users".id AS "Chat_Users_id", "Chat_Users".name AS "Chat_Users_name" 
+FROM "Chat_Users" 
+WHERE "Chat_Users".name = ?) AS anon_1]
+[parameters: [{}]]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-05 23:50:44,709 INFO server.py Установлено соединение с ПК ('127.0.0.1', 52410)
+2021-04-05 23:50:45,210 INFO server.py Есть сообщения от клиентов
+2021-04-05 23:50:45,212 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x046F0880>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:50:45,214 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x041989B8>, <common.json_messenger.JSONMessenger object at 0x046F0880>, {'action': 'presence', 'time': 1617655844.7478697, 'user': {'account_name': 'hello'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:50:45,214 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617655844.7478697, 'user': {'account_name': 'hello'}}
+2021-04-05 23:50:45,216 INFO server.py Ошибка при получении сообщения: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 19988 and this is thread id 31336.
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT "Chat_Users".id AS "Chat_Users_id", "Chat_Users".name AS "Chat_Users_name" 
+FROM "Chat_Users" 
+WHERE "Chat_Users".name = ?) AS anon_1]
+[parameters: [{}]]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-05 23:52:06,271 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:53:00,997 INFO server.py Установлено соединение с ПК ('127.0.0.1', 52787)
+2021-04-05 23:53:01,497 INFO server.py Есть сообщения от клиентов
+2021-04-05 23:53:01,628 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04339C10>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:53:01,630 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x043399B8>, <common.json_messenger.JSONMessenger object at 0x04339C10>, {'action': 'presence', 'time': 1617655981.0374053, 'user': {'account_name': 'hello'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:53:01,630 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617655981.0374053, 'user': {'account_name': 'hello'}}
+2021-04-05 23:53:01,727 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-05 23:53:01,731 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04339C10>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-05 23:57:00,416 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-05 23:57:10,085 INFO server.py Установлено соединение с ПК ('127.0.0.1', 53730)
+2021-04-05 23:57:10,587 INFO server.py Есть сообщения от клиентов
+2021-04-05 23:57:10,717 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03D69C10>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:57:10,719 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03D699B8>, <common.json_messenger.JSONMessenger object at 0x03D69C10>, {'action': 'presence', 'time': 1617656230.1229208, 'user': {'account_name': 'abcd'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-05 23:57:10,719 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617656230.1229208, 'user': {'account_name': 'abcd'}}
+2021-04-05 23:57:10,821 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-05 23:57:10,825 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03D69C10>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:00:04,409 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:00:11,117 INFO server.py Установлено соединение с ПК ('127.0.0.1', 54479)
+2021-04-06 00:00:11,617 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:00:11,749 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04189C10>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:00:11,753 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x041899B8>, <common.json_messenger.JSONMessenger object at 0x04189C10>, {'action': 'presence', 'time': 1617656411.1560025, 'user': {'account_name': 'bcde'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:00:11,753 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617656411.1560025, 'user': {'account_name': 'bcde'}}
+2021-04-06 00:00:11,799 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-06 00:00:11,802 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04189C10>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:03:29,273 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:03:33,364 INFO server.py Установлено соединение с ПК ('127.0.0.1', 55393)
+2021-04-06 00:03:33,865 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:03:33,998 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03C78C10>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:03:34,001 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03C789B8>, <common.json_messenger.JSONMessenger object at 0x03C78C10>, {'action': 'presence', 'time': 1617656613.4062042, 'user': {'account_name': 'abcd'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:03:34,001 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617656613.4062042, 'user': {'account_name': 'abcd'}}
+2021-04-06 00:03:34,055 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-06 00:03:34,059 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03C78C10>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:04:11,087 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:04:11,089 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03C786E8>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:04:11,090 INFO server.py Клиент ('127.0.0.1', 55393) отключился от сервера.
+2021-04-06 00:04:26,797 INFO server.py Установлено соединение с ПК ('127.0.0.1', 55655)
+2021-04-06 00:04:27,297 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:04:27,300 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03C786E8>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:04:27,302 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03C789B8>, <common.json_messenger.JSONMessenger object at 0x03C786E8>, {'action': 'presence', 'time': 1617656666.8369653, 'user': {'account_name': 'dsdfsdf'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:04:27,303 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617656666.8369653, 'user': {'account_name': 'dsdfsdf'}}
+2021-04-06 00:04:27,304 INFO server.py Ошибка при получении сообщения: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 24708 and this is thread id 24980.
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT "Chat_Users".id AS "Chat_Users_id", "Chat_Users".name AS "Chat_Users_name" 
+FROM "Chat_Users" 
+WHERE "Chat_Users".name = ?) AS anon_1]
+[parameters: [{}]]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-06 00:05:25,726 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:05:29,684 INFO server.py Установлено соединение с ПК ('127.0.0.1', 55910)
+2021-04-06 00:05:30,184 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:05:30,310 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04588C10>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:05:30,313 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x045889B8>, <common.json_messenger.JSONMessenger object at 0x04588C10>, {'action': 'presence', 'time': 1617656729.7224884, 'user': {'account_name': 'abcd'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:05:30,313 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617656729.7224884, 'user': {'account_name': 'abcd'}}
+2021-04-06 00:05:30,364 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-06 00:05:30,367 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04588C10>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:05:43,876 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:05:43,878 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04606748>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:05:43,879 INFO server.py Клиент ('127.0.0.1', 55910) отключился от сервера.
+2021-04-06 00:05:53,116 INFO server.py Установлено соединение с ПК ('127.0.0.1', 56026)
+2021-04-06 00:05:53,617 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:05:53,619 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04606748>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:05:53,621 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x045889B8>, <common.json_messenger.JSONMessenger object at 0x04606748>, {'action': 'presence', 'time': 1617656753.1604476, 'user': {'account_name': 'defg'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:05:53,621 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617656753.1604476, 'user': {'account_name': 'defg'}}
+2021-04-06 00:05:53,622 INFO server.py Ошибка при получении сообщения: (sqlite3.ProgrammingError) SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 6852 and this is thread id 26476.
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT "Chat_Users".id AS "Chat_Users_id", "Chat_Users".name AS "Chat_Users_name" 
+FROM "Chat_Users" 
+WHERE "Chat_Users".name = ?) AS anon_1]
+[parameters: [{}]]
+(Background on this error at: http://sqlalche.me/e/14/f405)
+2021-04-06 00:20:14,492 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:27:35,907 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:30:53,927 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:31:03,842 INFO server.py Установлено соединение с ПК ('127.0.0.1', 61838)
+2021-04-06 00:31:04,343 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:31:04,475 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04585F88>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:31:04,478 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x0450AA90>, <common.json_messenger.JSONMessenger object at 0x04585F88>, {'action': 'presence', 'time': 1617658263.8846142, 'user': {'account_name': 'abcd'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:31:04,478 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617658263.8846142, 'user': {'account_name': 'abcd'}}
+2021-04-06 00:31:04,520 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-06 00:31:04,524 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04585F88>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:31:08,527 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:31:08,529 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04585748>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:31:08,530 INFO server.py Клиент ('127.0.0.1', 61838) отключился от сервера.
+2021-04-06 00:31:11,235 INFO server.py Установлено соединение с ПК ('127.0.0.1', 61874)
+2021-04-06 00:31:11,735 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:31:11,737 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04585748>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:31:11,739 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x0450AA90>, <common.json_messenger.JSONMessenger object at 0x04585748>, {'action': 'presence', 'time': 1617658271.2733097, 'user': {'account_name': 'defg'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:31:11,739 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617658271.2733097, 'user': {'account_name': 'defg'}}
+2021-04-06 00:31:11,806 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-06 00:31:11,809 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04585748>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:35:16,911 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:35:25,579 INFO server.py Установлено соединение с ПК ('127.0.0.1', 62830)
+2021-04-06 00:35:26,080 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:35:26,211 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x040671C0>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:35:26,214 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03FEAA90>, <common.json_messenger.JSONMessenger object at 0x040671C0>, {'action': 'presence', 'time': 1617658525.616124, 'user': {'account_name': 'abcd'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:35:26,214 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617658525.616124, 'user': {'account_name': 'abcd'}}
+2021-04-06 00:35:26,256 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-06 00:35:26,259 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x040671C0>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:35:32,764 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:35:32,766 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x04067FE8>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:35:32,767 INFO server.py Клиент ('127.0.0.1', 62830) отключился от сервера.
+2021-04-06 00:36:13,885 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-04-06 00:36:17,010 INFO server.py Установлено соединение с ПК ('127.0.0.1', 63012)
+2021-04-06 00:36:17,510 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:36:17,642 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03B27160>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:36:17,644 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03AAAA90>, <common.json_messenger.JSONMessenger object at 0x03B27160>, {'action': 'presence', 'time': 1617658577.04858, 'user': {'account_name': 'abcd'}}), {}. Используемый модуль: __main__ и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:36:17,644 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617658577.04858, 'user': {'account_name': 'abcd'}}
+2021-04-06 00:36:17,685 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-04-06 00:36:17,688 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03B27160>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process_client_message.
+2021-04-06 00:36:24,196 INFO server.py Есть сообщения от клиентов
+2021-04-06 00:36:24,198 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03B27448>,), {}. Используемый модуль: common.json_messenger и функция self._bootstrap_inner(). Также была вызвана функция process.
+2021-04-06 00:36:24,199 INFO server.py Клиент ('127.0.0.1', 63012) отключился от сервера.

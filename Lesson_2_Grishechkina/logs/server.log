@@ -1,0 +1,161 @@
+2021-03-29 21:55:45,516 DEBUG decorator.py Была вызвана функция start c параметрами (<__main__.JIMServer object at 0x037032B0>, '', 7777), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция main.
+2021-03-29 21:55:45,520 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 21:56:27,716 DEBUG decorator.py Была вызвана функция start c параметрами (<__main__.JIMServer object at 0x03A05340>, '', 7777), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция main.
+2021-03-29 21:56:27,718 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 21:57:19,893 INFO server.py Установлено соединение с ПК ('127.0.0.1', 62853)
+2021-03-29 21:57:20,394 INFO server.py Есть сообщения от клиентов
+2021-03-29 21:57:20,396 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03A05748>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-29 21:57:20,399 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03A05340>, <common.json_messenger.JSONMessenger object at 0x03A05748>, {'action': 'presence', 'time': 1617044239.8949337, 'user': {'account_name': 'MASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-29 21:57:20,399 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617044239.8949337, 'user': {'account_name': 'MASHA'}}
+2021-03-29 21:57:20,399 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-03-29 21:57:20,402 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03A05748>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-03-29 21:57:39,417 INFO server.py Есть сообщения от клиентов
+2021-03-29 21:57:39,419 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03A053D0>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-29 21:57:39,419 INFO server.py Клиент ('127.0.0.1', 62853) отключился от сервера.
+2021-03-29 22:02:54,710 DEBUG decorator.py Была вызвана функция start c параметрами (<__main__.JIMServer object at 0x03255340>, '', 7777), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция main.
+2021-03-29 22:02:54,710 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 22:03:59,388 CRITICAL server.py Попытка запуска сервера с указанием неподходящего порта 70000. Допустимы адреса с 1024 до 65535.
+2021-03-29 22:03:59,389 CRITICAL server.py В качастве порта может быть указано только число в диапазоне от 1024 до 65535.
+2021-03-29 22:05:23,407 DEBUG decorator.py Была вызвана функция start c параметрами (<__main__.JIMServer object at 0x033152F8>, '', 77777), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция main.
+2021-03-29 22:05:23,407 INFO server.py Запущен сервер, порт для подключений: 77777, адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 22:24:13,505 CRITICAL server.py Порт должен быть целым числом!
+2021-03-29 22:24:38,709 CRITICAL server.py Попытка запуска сервера с указанием неподходящего порта 77777. Допустимы адреса с 1024 до 65535.
+2021-03-29 22:25:07,620 CRITICAL server.py Попытка запуска сервера с указанием неподходящего октета IP 871. Допустим диапазон с 0 до 254.
+2021-03-29 22:25:32,339 CRITICAL server.py Попытка запуска сервера с указанием неподходящего 3 октета IP 871. Допустим диапазон с 0 до 254.
+2021-03-29 22:25:48,754 CRITICAL server.py Попытка запуска сервера с указанием неподходящего 4 октета IP 871. Допустим диапазон с 0 до 254.
+2021-03-29 22:38:27,187 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 22:40:07,776 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 22:46:52,722 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 22:47:12,720 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 23:06:38,663 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 23:07:11,936 DEBUG decorator.py Была вызвана функция start c параметрами (<__main__.JIMServer object at 0x03C45460>,), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция main.
+2021-03-29 23:07:11,936 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 23:18:58,818 DEBUG decorator.py Была вызвана функция start c параметрами (<__main__.JIMServer object at 0x03652460>,), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция main.
+2021-03-29 23:18:58,819 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 23:37:19,165 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 23:39:04,357 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-29 23:52:21,057 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:08:35,241 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:09:03,269 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60638)
+2021-03-30 00:09:03,408 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60639)
+2021-03-30 00:09:03,408 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:09:03,517 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03782568>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:03,517 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:03,518 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60640)
+2021-03-30 00:09:04,018 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:09:04,021 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03782580>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:04,022 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:04,024 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03782640>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:04,024 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:04,435 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:09:04,438 CRITICAL server.py [WinError 10048] Обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2021-03-30 00:09:18,671 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60668)
+2021-03-30 00:09:18,682 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60669)
+2021-03-30 00:09:18,691 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60670)
+2021-03-30 00:09:19,191 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:09:19,193 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03782958>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:19,193 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:19,195 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03782610>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:19,195 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:19,197 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03782568>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:19,197 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:19,494 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:09:19,496 CRITICAL server.py [WinError 10048] Обычно разрешается только одно использование адреса сокета (протокол/сетевой адрес/порт)
+2021-03-30 00:09:47,026 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:09:47,279 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60734)
+2021-03-30 00:09:47,280 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60735)
+2021-03-30 00:09:47,280 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60736)
+2021-03-30 00:09:47,780 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:09:47,819 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03643580>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:47,819 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:47,821 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x036439E8>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:47,821 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:09:47,822 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03643598>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:09:47,822 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:10:15,553 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:10:15,802 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60779)
+2021-03-30 00:10:15,806 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60780)
+2021-03-30 00:10:15,808 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60781)
+2021-03-30 00:10:16,308 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:10:16,345 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03123580>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:10:16,345 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:10:16,347 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x031239E8>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:10:16,347 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:10:16,349 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03123598>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:10:16,349 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:10:52,953 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:11:17,708 INFO server.py Установлено соединение с ПК ('127.0.0.1', 60896)
+2021-03-30 00:11:18,209 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:11:18,250 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03A83568>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:11:18,250 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:13:22,394 INFO server.py Установлено соединение с ПК ('127.0.0.1', 61485)
+2021-03-30 00:13:22,895 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:13:22,897 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03A83580>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:13:22,897 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:18:41,481 INFO server.py Установлено соединение с ПК ('127.0.0.1', 62863)
+2021-03-30 00:18:41,981 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:18:41,983 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03A83550>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:18:41,983 INFO server.py Ошибка при получении сообщения: 'int' object has no attribute 'sock'
+2021-03-30 00:25:36,738 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:25:55,666 INFO server.py Установлено соединение с ПК ('127.0.0.1', 64461)
+2021-03-30 00:25:56,167 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:26:35,106 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x0468EDC0>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:27:16,243 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x0465CE50>, <common.json_messenger.JSONMessenger object at 0x0468EDC0>, {'action': 'presence', 'time': 1617053155.7053506, 'user': {'account_name': 'саоа'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:27:16,690 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617053155.7053506, 'user': {'account_name': 'саоа'}}
+2021-03-30 00:27:16,690 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-03-30 00:27:16,697 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x0468EDC0>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-03-30 00:34:33,635 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:34:56,800 INFO server.py Установлено соединение с ПК ('127.0.0.1', 49246)
+2021-03-30 00:34:57,301 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:34:57,339 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03833568>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:34:57,341 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03833430>, <common.json_messenger.JSONMessenger object at 0x03833568>, {'action': 'presence', 'time': 1617053696.842562, 'user': {'account_name': 'MASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:34:57,342 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617053696.842562, 'user': {'account_name': 'MASHA'}}
+2021-03-30 00:34:57,342 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-03-30 00:34:57,344 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03833568>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-03-30 00:35:23,371 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:35:23,372 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03833640>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:35:23,374 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03833430>, <common.json_messenger.JSONMessenger object at 0x03833640>, {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053723.2281692, 'mess_text': 'dlkfj'}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:35:23,374 INFO server.py Разбор сообщения от клиента : {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053723.2281692, 'mess_text': 'dlkfj'}
+2021-03-30 00:35:23,375 INFO server.py Сообщение от клиента добавлено в очередь
+2021-03-30 00:35:23,377 DEBUG decorator.py Была вызвана функция process_message c параметрами (<__main__.JIMServer object at 0x03833430>, {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053723.2281692, 'mess_text': 'dlkfj'}, [<socket.socket fd=660, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49246)>]), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:35:23,380 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03833568>, {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053723.2281692, 'mess_text': 'dlkfj'}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_message.
+2021-03-30 00:35:23,380 INFO server.py Отправлено сообщение пользователю MASHA от пользователя MASHA.
+2021-03-30 00:35:33,390 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:35:33,392 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03833628>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:35:33,393 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03833430>, <common.json_messenger.JSONMessenger object at 0x03833628>, {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053733.339104, 'mess_text': 'dlsajk'}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:35:33,394 INFO server.py Разбор сообщения от клиента : {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053733.339104, 'mess_text': 'dlsajk'}
+2021-03-30 00:35:33,394 INFO server.py Сообщение от клиента добавлено в очередь
+2021-03-30 00:35:33,395 DEBUG decorator.py Была вызвана функция process_message c параметрами (<__main__.JIMServer object at 0x03833430>, {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053733.339104, 'mess_text': 'dlsajk'}, [<socket.socket fd=660, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49246)>]), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:35:33,398 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03833568>, {'action': 'message', 'sender': 'MASHA', 'to': 'MASHA', 'time': 1617053733.339104, 'mess_text': 'dlsajk'}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_message.
+2021-03-30 00:35:33,398 INFO server.py Отправлено сообщение пользователю MASHA от пользователя MASHA.
+2021-03-30 00:35:36,401 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:35:36,403 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03833550>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:35:36,403 INFO server.py Клиент ('127.0.0.1', 49246) отключился от сервера.
+2021-03-30 00:36:16,391 INFO server.py Запущен сервер, порт для подключений: 7777, адрес с которого принимаются подключения: 127.0.0.1. Если адрес не указан, принимаются соединения с любых адресов.
+2021-03-30 00:36:16,590 INFO server.py Установлено соединение с ПК ('127.0.0.1', 49625)
+2021-03-30 00:36:16,591 INFO server.py Установлено соединение с ПК ('127.0.0.1', 49626)
+2021-03-30 00:36:16,601 INFO server.py Установлено соединение с ПК ('127.0.0.1', 49627)
+2021-03-30 00:36:17,102 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:36:17,140 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD3580>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:17,141 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03CD3448>, <common.json_messenger.JSONMessenger object at 0x03CD3580>, {'action': 'presence', 'time': 1617053776.6418135, 'user': {'account_name': 'DASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:17,142 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617053776.6418135, 'user': {'account_name': 'DASHA'}}
+2021-03-30 00:36:17,142 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-03-30 00:36:17,144 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD3580>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-03-30 00:36:17,146 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD3628>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:17,147 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03CD3448>, <common.json_messenger.JSONMessenger object at 0x03CD3628>, {'action': 'presence', 'time': 1617053776.6408384, 'user': {'account_name': 'GLASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:17,147 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617053776.6408384, 'user': {'account_name': 'GLASHA'}}
+2021-03-30 00:36:17,148 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-03-30 00:36:17,150 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD3628>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-03-30 00:36:17,152 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD35F8>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:17,154 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03CD3448>, <common.json_messenger.JSONMessenger object at 0x03CD35F8>, {'action': 'presence', 'time': 1617053776.6468139, 'user': {'account_name': 'MASHA'}}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:17,155 INFO server.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1617053776.6468139, 'user': {'account_name': 'MASHA'}}
+2021-03-30 00:36:17,155 INFO server.py Cформирован ответ клиенту {'response': 200}
+2021-03-30 00:36:17,157 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD35F8>, {'response': 200}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_client_message.
+2021-03-30 00:36:36,173 INFO server.py Есть сообщения от клиентов
+2021-03-30 00:36:36,174 DEBUG decorator.py Была вызвана функция get_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD39B8>,), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:36,175 DEBUG decorator.py Была вызвана функция process_client_message c параметрами (<__main__.JIMServer object at 0x03CD3448>, <common.json_messenger.JSONMessenger object at 0x03CD39B8>, {'action': 'message', 'sender': 'GLASHA', 'to': 'DASHA', 'time': 1617053796.1149116, 'mess_text': 'dfglkj'}), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:36,176 INFO server.py Разбор сообщения от клиента : {'action': 'message', 'sender': 'GLASHA', 'to': 'DASHA', 'time': 1617053796.1149116, 'mess_text': 'dfglkj'}
+2021-03-30 00:36:36,177 INFO server.py Сообщение от клиента добавлено в очередь
+2021-03-30 00:36:36,179 DEBUG decorator.py Была вызвана функция process_message c параметрами (<__main__.JIMServer object at 0x03CD3448>, {'action': 'message', 'sender': 'GLASHA', 'to': 'DASHA', 'time': 1617053796.1149116, 'mess_text': 'dfglkj'}, [<socket.socket fd=532, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49625)>, <socket.socket fd=448, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49626)>, <socket.socket fd=692, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49627)>]), {}. Используемый модуль: __main__ и функция main(). Также была вызвана функция process.
+2021-03-30 00:36:36,181 DEBUG decorator.py Была вызвана функция send_message c параметрами (<common.json_messenger.JSONMessenger object at 0x03CD3580>, {'action': 'message', 'sender': 'GLASHA', 'to': 'DASHA', 'time': 1617053796.1149116, 'mess_text': 'dfglkj'}), {}. Используемый модуль: common.json_messenger и функция main(). Также была вызвана функция process_message.
+2021-03-30 00:36:36,182 INFO server.py Отправлено сообщение пользователю DASHA от пользователя GLASHA.
