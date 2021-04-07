@@ -10,8 +10,12 @@ from common.json_messenger import JSONMessenger
 from decorator import Log, LOGGER
 from descriptors import CheckPort, CheckHost
 from metaclasses import ServerInspector
-from threading import Thread
+from threading import Thread, Lock
 from server_database import ServerDB
+# Флаг что был подключён новый пользователь, нужен чтобы не мучать BD
+# постоянными запросами на обновление
+new_connection = False
+conflag_lock = Lock()
 
 
 class JIMServer(JIMBase, metaclass=ServerInspector):
@@ -19,7 +23,7 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
     clients = []
     messages = []
     # Словарь, содержащий имена пользователей и соответствующие им сокеты.
-    names = dict()
+    messengers = dict()
     listen_address = CheckHost()
     listen_port = CheckPort()
     database = None
@@ -86,14 +90,14 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
                 self.process_message(i, send_data_lst)
             except Exception:
                 LOGGER.info(f'Связь с клиентом с именем {i[self.DESTINATION]} была потеряна')
-                self.remove_client(self.names[i[self.DESTINATION]].sock)
+                self.remove_client(self.messengers[i[self.DESTINATION]].sock)
         self.messages.clear()
 
     def remove_client(self, sock):
         self.clients.remove(sock)
-        for name, messenger in self.names.items():
+        for name, messenger in self.messengers.items():
             if messenger.sock == sock:
-                del self.names[name]
+                del self.messengers[name]
                 self.db_session.user_logout(name)
                 break
 
@@ -108,6 +112,7 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
         :param message: словарь, полученный от клиента
         :return: возвращает словарь с ответом сервера
         """
+        global new_connection
         LOGGER.info(f'Разбор сообщения от клиента : {message}')
 
         if self.ACTION not in message:
@@ -118,11 +123,21 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
         if message[self.ACTION] == self.PRESENCE \
                 and self.TIME in message and self.USER in message and self.ACCOUNT_NAME in message[self.USER]:
             # {'action': 'presence', 'time': 1573760672.167031, 'user': {'account_name': 'Guest'}}
-            self.db_session.user_login(message[self.USER][self.ACCOUNT_NAME], self.listen_address, self.listen_port)
-            response = {self.RESPONSE: 200}
-            LOGGER.info(f'Cформирован ответ клиенту {response}')
-            messenger.send_message(response)
-            self.names[message[self.USER][self.ACCOUNT_NAME]] = messenger
+            client_name = message[self.USER][self.ACCOUNT_NAME]
+            if client_name not in self.messengers.keys():
+                self.db_session.user_login(client_name, self.listen_address, self.listen_port)
+                response = {self.RESPONSE: 200}
+                LOGGER.info(f'Cформирован ответ клиенту {response}')
+                messenger.send_message(response)
+                self.messengers[client_name] = messenger
+                with conflag_lock:
+                    new_connection = True
+            else:
+                response = self.RESPONSE_400
+                response[self.ERROR] = 'Имя пользователя уже занято.'
+                messenger.send_message(response)
+                self.clients.remove(messenger.sock)
+                messenger.sock.close()
             return
         elif message[self.ACTION] == self.MESSAGE \
                 and self.TIME in message and self.MESSAGE_TEXT in message and self.DESTINATION in message \
@@ -131,6 +146,46 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
             self.db_session.process_message(self.SENDER, self.DESTINATION)
             LOGGER.info(f'Сообщение от клиента добавлено в очередь')
             return
+        # Если клиент выходит
+        elif self.ACTION in message and message[self.ACTION] == self.EXIT and self.ACCOUNT_NAME in message:
+            client_name = message[self.ACCOUNT_NAME]
+            if self.messengers[client_name] == messenger:
+                self.database.user_logout(message[self.ACCOUNT_NAME])
+                LOGGER.info(f'Клиент {message[self.ACCOUNT_NAME]} корректно отключился от сервера.')
+                self.clients.remove(self.messengers[message[self.ACCOUNT_NAME]])
+                self.messengers[message[self.ACCOUNT_NAME]].close()
+                del self.messengers[message[self.ACCOUNT_NAME]]
+                with conflag_lock:
+                    new_connection = True
+                return
+
+        # Если это запрос контакт-листа
+        elif self.ACTION in message and message[self.ACTION] == self.GET_CONTACTS and self.USER in message and \
+                self.messengers[message[self.USER]] == messenger:
+            response = self.RESPONSE_202
+            response[self.LIST_INFO] = self.database.get_contacts(message[self.USER])
+            messenger.send_message(response)
+
+        # Если это добавление контакта
+        elif self.ACTION in message and message[self.ACTION] == self.ADD_CONTACT and self.ACCOUNT_NAME in message \
+                and self.USER in message and self.messengers[message[self.USER]] == messenger:
+            self.database.add_contact(message[self.USER], message[self.ACCOUNT_NAME])
+            response = {self.RESPONSE: 200}
+            messenger.send_message(response)
+
+        # Если это удаление контакта
+        elif self.ACTION in message and message[self.ACTION] == self.REMOVE_CONTACT and self.ACCOUNT_NAME in message \
+                and self.USER in message and self.messengers[message[self.USER]] == messenger:
+            self.database.remove_contact(message[self.USER], message[self.ACCOUNT_NAME])
+            response = {self.RESPONSE: 200}
+            messenger.send_message(response)
+
+        # Если это запрос известных пользователей
+        elif self.ACTION in message and message[self.ACTION] == self.USERS_REQUEST and self.ACCOUNT_NAME in message \
+                and self.messengers[message[self.ACCOUNT_NAME]] == messenger:
+            response = self.RESPONSE_202
+            response[self.LIST_INFO] = [user[0] for user in self.database.users_list()]
+            messenger.send_message(response)
         # Иначе отдаём Bad request
         messenger.send_message(self.BAD_REQUEST)
 
@@ -144,9 +199,9 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
         :param listen_socks:
         :return:
         """
-        if message[self.DESTINATION] in self.names:
-            if self.names[message[self.DESTINATION]].sock in listen_socks:
-                messenger = self.names[message[self.DESTINATION]]
+        if message[self.DESTINATION] in self.messengers:
+            if self.messengers[message[self.DESTINATION]].sock in listen_socks:
+                messenger = self.messengers[message[self.DESTINATION]]
                 messenger.send_message(message)
                 LOGGER.info(f'Отправлено сообщение пользователю {message[self.DESTINATION]} '
                             f'от пользователя {message[self.SENDER]}.')
