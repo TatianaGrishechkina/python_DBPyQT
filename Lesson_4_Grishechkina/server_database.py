@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, DateTime
 from sqlalchemy.orm import mapper, sessionmaker
 from common.jimbase import JIMBase
+from decorator import LOGGER
 from datetime import datetime
 
 
@@ -100,14 +101,20 @@ class ServerDB:
             self.session.commit()
 
         # Функция фиксирует передачу сообщения и делает соответствующие отметки в БД
-        def process_message(self, sender, recipient):
-            # Получаем ID отправителя и получателя
-            sender = self.session.query(self.db.ChatUsers).filter_by(name=sender).first().id
-            recipient = self.session.query(self.db.ChatUsers).filter_by(name=recipient).first().id
+        def process_message(self, sender_name, recipient_name):
+            # Получаем строки отправителя и получателя
+            sender = self.session.query(self.db.ChatUsers).filter_by(name=sender_name).first()
+            if sender is None:
+                LOGGER.error(f'process_message не нашел пользователя "{sender_name}" в таблице ChatUsers')
+                return
+            recipient = self.session.query(self.db.ChatUsers).filter_by(name=recipient_name).first()
+            if recipient is None:
+                LOGGER.error(f'process_message не нашел пользователя "{recipient_name}" в таблице ChatUsers')
+                return
             # Запрашиваем строки из истории и увеличиваем счётчики
-            sender_row = self.session.query(self.db.UsersHistory).filter_by(user=sender).first()
+            sender_row = self.session.query(self.db.UsersHistory).filter_by(user=sender.id).first()
             sender_row.sent += 1
-            recipient_row = self.session.query(self.db.UsersHistory).filter_by(user=recipient).first()
+            recipient_row = self.session.query(self.db.UsersHistory).filter_by(user=recipient.id).first()
             recipient_row.accepted += 1
 
             self.session.commit()
@@ -195,13 +202,14 @@ class ServerDB:
             # Возвращаем список кортежей
             return query.all()
 
-    def __init__(self):
+    def __init__(self, path):
         # Создаём движок базы данных
         # SERVER_DATABASE - sqlite:///server_database.db3
         # echo=False - отключаем ведение лога (вывод sql-запросов)
         # pool_recycle - По умолчанию соединение с БД через 8 часов простоя обрывается.
         # Чтобы это не случилось нужно добавить опцию pool_recycle = 7200 (переуст-ка соед-я через 2 часа)
-        self.database_engine = create_engine(JIMBase.SERVER_DATABASE, echo=False, pool_recycle=7200)
+        self.database_engine = create_engine(f'sqlite:///{path}', echo=False, pool_recycle=7200,
+                                             connect_args={'check_same_thread': False})
 
         # Создаём объект MetaData
         self.metadata = MetaData()

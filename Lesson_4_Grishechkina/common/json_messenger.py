@@ -24,7 +24,6 @@ class JSONMessenger:
         принимает байты, выдаёт словарь, а если принято что-то другое -- отдаёт ошибку значения
         :return: возвращает словарь, полученный по сокету
         """
-
         encoded_response = self.sock.recv(self.MAX_PACKAGE_LENGTH)
         if not isinstance(encoded_response, bytes):
             raise ValueError

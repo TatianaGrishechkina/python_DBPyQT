@@ -1,21 +1,21 @@
 """Программа-сервер"""
 
+import os
 import socket
 import sys
-# import json
 import select
 import time
 from common.jimbase import JIMBase
 from common.json_messenger import JSONMessenger
+import configparser
 from decorator import Log, LOGGER
 from descriptors import CheckPort, CheckHost
 from metaclasses import ServerInspector
-from threading import Thread, Lock
+from threading import Thread
 from server_database import ServerDB
-# Флаг что был подключён новый пользователь, нужен чтобы не мучать BD
-# постоянными запросами на обновление
-new_connection = False
-conflag_lock = Lock()
+from server_cli import run_server_cli
+from server_config import ServerConfig
+from server_gui import run_server_gui
 
 
 class JIMServer(JIMBase, metaclass=ServerInspector):
@@ -28,6 +28,7 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
     listen_port = CheckPort()
     database = None
     db_session = None
+    on_connections_change = []
 
     # @Log()
     def start(self):
@@ -99,6 +100,7 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
             if messenger.sock == sock:
                 del self.messengers[name]
                 self.db_session.user_logout(name)
+                self.fire(self.on_connections_change)
                 break
 
     @Log()
@@ -112,7 +114,6 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
         :param message: словарь, полученный от клиента
         :return: возвращает словарь с ответом сервера
         """
-        global new_connection
         LOGGER.info(f'Разбор сообщения от клиента : {message}')
 
         if self.ACTION not in message:
@@ -130,64 +131,63 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
                 LOGGER.info(f'Cформирован ответ клиенту {response}')
                 messenger.send_message(response)
                 self.messengers[client_name] = messenger
-                with conflag_lock:
-                    new_connection = True
+                self.fire(self.on_connections_change)
             else:
                 response = self.RESPONSE_400
                 response[self.ERROR] = 'Имя пользователя уже занято.'
                 messenger.send_message(response)
                 self.clients.remove(messenger.sock)
                 messenger.sock.close()
-            return
+
         elif message[self.ACTION] == self.MESSAGE \
                 and self.TIME in message and self.MESSAGE_TEXT in message and self.DESTINATION in message \
                 and self.SENDER in message:
             self.messages.append(message)
             self.db_session.process_message(self.SENDER, self.DESTINATION)
             LOGGER.info(f'Сообщение от клиента добавлено в очередь')
-            return
+
         # Если клиент выходит
         elif self.ACTION in message and message[self.ACTION] == self.EXIT and self.ACCOUNT_NAME in message:
             client_name = message[self.ACCOUNT_NAME]
             if self.messengers[client_name] == messenger:
-                self.database.user_logout(message[self.ACCOUNT_NAME])
+                self.db_session.user_logout(message[self.ACCOUNT_NAME])
                 LOGGER.info(f'Клиент {message[self.ACCOUNT_NAME]} корректно отключился от сервера.')
                 self.clients.remove(self.messengers[message[self.ACCOUNT_NAME]])
                 self.messengers[message[self.ACCOUNT_NAME]].close()
                 del self.messengers[message[self.ACCOUNT_NAME]]
-                with conflag_lock:
-                    new_connection = True
-                return
+                self.fire(self.on_connections_change)
 
         # Если это запрос контакт-листа
         elif self.ACTION in message and message[self.ACTION] == self.GET_CONTACTS and self.USER in message and \
-                self.messengers[message[self.USER]] == messenger:
+                self.messengers[message[self.USER]].sock == messenger.sock:
             response = self.RESPONSE_202
-            response[self.LIST_INFO] = self.database.get_contacts(message[self.USER])
+            response[self.LIST_INFO] = self.db_session.get_contacts(message[self.USER])
             messenger.send_message(response)
 
         # Если это добавление контакта
         elif self.ACTION in message and message[self.ACTION] == self.ADD_CONTACT and self.ACCOUNT_NAME in message \
-                and self.USER in message and self.messengers[message[self.USER]] == messenger:
-            self.database.add_contact(message[self.USER], message[self.ACCOUNT_NAME])
+                and self.USER in message and self.messengers[message[self.USER]].sock == messenger.sock:
+            self.db_session.add_contact(message[self.USER], message[self.ACCOUNT_NAME])
             response = {self.RESPONSE: 200}
             messenger.send_message(response)
 
         # Если это удаление контакта
         elif self.ACTION in message and message[self.ACTION] == self.REMOVE_CONTACT and self.ACCOUNT_NAME in message \
-                and self.USER in message and self.messengers[message[self.USER]] == messenger:
-            self.database.remove_contact(message[self.USER], message[self.ACCOUNT_NAME])
+                and self.USER in message and self.messengers[message[self.USER]].sock == messenger.sock:
+            self.db_session.remove_contact(message[self.USER], message[self.ACCOUNT_NAME])
             response = {self.RESPONSE: 200}
             messenger.send_message(response)
 
         # Если это запрос известных пользователей
         elif self.ACTION in message and message[self.ACTION] == self.USERS_REQUEST and self.ACCOUNT_NAME in message \
-                and self.messengers[message[self.ACCOUNT_NAME]] == messenger:
+                and self.messengers[message[self.ACCOUNT_NAME]].sock == messenger.sock:
             response = self.RESPONSE_202
-            response[self.LIST_INFO] = [user[0] for user in self.database.users_list()]
+            response[self.LIST_INFO] = [user[0] for user in self.db_session.users_list()]
             messenger.send_message(response)
+
         # Иначе отдаём Bad request
-        messenger.send_message(self.BAD_REQUEST)
+        else:
+            messenger.send_message(self.BAD_REQUEST)
 
     @Log()
     def process_message(self, message, listen_socks):
@@ -212,39 +212,10 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
                 f'Пользователь {message[self.DESTINATION]} не зарегистрирован на сервере, '
                 f'отправка сообщения невозможна.')
 
-
-def show_help():
-    print("""
-            Поддерживаемые комманды:
-            help - это меню
-            users - общий список пользователей
-            conn - пользователи онлайн
-            lh - история входов пользователя
-            exit - завершение работы сервера
-    """)
-
-
-def interface_func(database):
-    session = database.create_session()
-    show_help()
-    while True:
-        command = input('Введите комманду: ')
-        if command == 'help':
-            show_help()
-        elif command == 'exit':
-            break
-        elif command == 'users':
-            for user in sorted(session.users_list()):
-                print({user[0]})
-        elif command == 'conn':
-            for user in sorted(session.active_users_list()):
-                print(f'Пользователь {user[0]}, подключен: {user[1]}:{user[2]}, время установки соединения: {user[3]}')
-        elif command == 'lh':
-            name = input('Введите имя конкретного пользователя. Для вывода всей истории, просто нажмите Enter: ')
-            for user in session.login_history(name):
-                print(f'Пользователь: {user[0]} время входа: {user[1]}. Вход с: {user[2]}:{user[3]}')
-        else:
-            print('Команда не распознана.')
+    @staticmethod
+    def fire(subscription_list):
+        for callback in subscription_list:
+            callback()
 
 
 def server_func(my_server):
@@ -253,57 +224,36 @@ def server_func(my_server):
 
 
 def main():
-    """
-    Загрузка параметров командной строки, если нет параметров, то задаём значения по умоланию.
-    Сначала обрабатываем порт:
-    server.py -p 8079 -a 192.168.1.2
-    """
-    try:
-        if '-p' in sys.argv:
-            listen_port = sys.argv[sys.argv.index('-p') + 1]
-        else:
-            listen_port = JIMBase.DEFAULT_PORT
-    except IndexError:
-        LOGGER.critical('После параметра -\'p\' необходимо указать номер порта.')
-        sys.exit(1)
+    # Загрузка файла конфигурации сервера
+    ini = configparser.ConfigParser()
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    ini.read(f"{dir_path}/{'server.ini'}")
 
-    # Затем загружаем какой адрес слушать
-
-    try:
-        if '-a' in sys.argv:
-            listen_address = sys.argv[sys.argv.index('-a') + 1]
-        else:
-            listen_address = JIMBase.DEFAULT_IP_ADDRESS
-
-    except IndexError:
-        LOGGER.critical('После параметра \'a\'- необходимо указать адрес, который будет слушать сервер.')
-        sys.exit(1)
+    # Чтение конфигурации сервера
+    config = ServerConfig()
+    config.read_default()
+    config.read_from_ini(ini)
+    config.read_from_cmd()
 
     # Инициализация базы данных
-    database = ServerDB()
+    database = ServerDB(os.path.join(config.db_path, config.db_file))
 
+    # Запуск сервера
     my_server = JIMServer()
-    my_server.listen_address = listen_address
-    my_server.listen_port = int(listen_port)
+    my_server.listen_address = config.address
+    my_server.listen_port = config.port
     my_server.database = database
     my_server.start()
-    print(f'Сервер запущен на порту {listen_address}:{listen_port}')
+    print(f'Сервер запущен на порту {config.address}:{config.port}')
 
-    # запускаем сервер одним потоком
+    # Запускаем поток обработки сообщений сервером
     server_thread = Thread(target=server_func, args=(my_server,))
     server_thread.daemon = True
     server_thread.start()
 
-    # интерфейс - другим
-    interface_thread = Thread(target=interface_func, args=(database,))
-    interface_thread.daemon = True
-    interface_thread.start()
-
-    while True:
-        time.sleep(1)
-        if server_thread.is_alive() and interface_thread.is_alive():
-            continue
-        break
+    # Запускаем пользовательский интерфейс
+    #run_server_cli(server_thread, database)
+    run_server_gui(my_server, config)
 
 
 if __name__ == '__main__':
