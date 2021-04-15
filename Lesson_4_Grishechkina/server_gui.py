@@ -222,7 +222,7 @@ def run_server_gui(server, config):
     # Создаём графическое окуружение для сервера:
     server_app = QApplication(sys.argv)
     main_window = MainWindow()
-    db_session = server.database.create_session()
+    db_session = server.db_session.create_session()
 
     # Инициализируем параметры в окна
     main_window.statusBar().showMessage('Server Working')

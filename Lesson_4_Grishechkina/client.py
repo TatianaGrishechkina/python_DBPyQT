@@ -247,7 +247,7 @@ def sender_func(my_cl):
                 # Список контактов
                 elif command == 'contacts':
                     with database_lock:
-                        contacts_list = my_cl.database.get_contacts()
+                        contacts_list = my_cl.db_session.get_contacts()
                     for contact in contacts_list:
                         print(contact)
 
@@ -283,15 +283,15 @@ def print_history(my_cl):
     ask = input('Показать входящие сообщения - in, исходящие - out, все - просто Enter: ')
     with database_lock:
         if ask == 'in':
-            history_list = my_cl.database.get_history(to_who=my_cl.client_name)
+            history_list = my_cl.db_session.get_history(to_who=my_cl.client_name)
             for message in history_list:
                 print(f'\nСообщение от пользователя: {message[0]} от {message[3]}:\n{message[2]}')
         elif ask == 'out':
-            history_list = my_cl.database.get_history(from_who=my_cl.client_name)
+            history_list = my_cl.db_session.get_history(from_who=my_cl.client_name)
             for message in history_list:
                 print(f'\nСообщение пользователю: {message[1]} от {message[3]}:\n{message[2]}')
         else:
-            history_list = my_cl.database.get_history()
+            history_list = my_cl.db_session.get_history()
             for message in history_list:
                 print(f'\nСообщение от пользователя: {message[0]}, пользователю {message[1]} от {message[3]}\n{message[2]}')
 
@@ -302,16 +302,16 @@ def edit_contacts(my_cl):
     if ans == 'del':
         edit = input('Введите имя удаляемного контакта: ')
         with database_lock:
-            if my_cl.database.check_contact(edit):
-                my_cl.database.del_contact(edit)
+            if my_cl.db_session.check_contact(edit):
+                my_cl.db_session.del_contact(edit)
             else:
                 LOGGER.error('Попытка удаления несуществующего контакта.')
     elif ans == 'add':
         # Проверка на возможность такого контакта
         edit = input('Введите имя создаваемого контакта: ')
-        if my_cl.database.check_user(edit):
+        if my_cl.db_session.check_user(edit):
             with database_lock:
-                my_cl.database.add_contact(edit)
+                my_cl.db_session.add_contact(edit)
             with sock_lock:
                 try:
                     my_cl.add_contact(edit)
@@ -326,7 +326,7 @@ def sender_message(my_cl):
         return
         # Проверим, что получатель существует
     with database_lock:
-        if not my_cl.database.check_user(dest):
+        if not my_cl.db_session.check_user(dest):
             LOGGER.error(f'Попытка отправить сообщение незарегистрированому получателю: {dest}')
             return
     message = input('Введите сообщение для отправки или \'!!!\' для завершения работы: ')
