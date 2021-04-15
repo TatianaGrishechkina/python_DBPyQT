@@ -5,6 +5,8 @@ import socket
 import sys
 import select
 import time
+import hmac
+import binascii
 from common.jimbase import JIMBase
 from common.json_messenger import JSONMessenger
 import configparser
@@ -124,20 +126,7 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
         if message[self.ACTION] == self.PRESENCE \
                 and self.TIME in message and self.USER in message and self.ACCOUNT_NAME in message[self.USER]:
             # {'action': 'presence', 'time': 1573760672.167031, 'user': {'account_name': 'Guest'}}
-            client_name = message[self.USER][self.ACCOUNT_NAME]
-            if client_name not in self.messengers.keys():
-                self.db_session.user_login(client_name, self.listen_address, self.listen_port)
-                response = {self.RESPONSE: 200}
-                LOGGER.info(f'Cформирован ответ клиенту {response}')
-                messenger.send_message(response)
-                self.messengers[client_name] = messenger
-                self.fire(self.on_connections_change)
-            else:
-                response = self.RESPONSE_400
-                response[self.ERROR] = 'Имя пользователя уже занято.'
-                messenger.send_message(response)
-                self.clients.remove(messenger.sock)
-                messenger.sock.close()
+            self.authorize_user(messenger, message)
 
         elif message[self.ACTION] == self.MESSAGE \
                 and self.TIME in message and self.MESSAGE_TEXT in message and self.DESTINATION in message \
@@ -185,9 +174,100 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
             response[self.LIST_INFO] = [user[0] for user in self.db_session.users_list()]
             messenger.send_message(response)
 
+        # Если это запрос публичного ключа пользователя
+        elif self.ACTION in message and message[self.ACTION] == self.PUBLIC_KEY_REQUEST and self.ACCOUNT_NAME in message:
+            response = self.RESPONSE_511
+            response[self.DATA] = self.db_session.get_pubkey(message[self.ACCOUNT_NAME])
+            # может быть, что ключа ещё нет (пользователь никогда не логинился,
+            # тогда шлём 400)
+            if response[self.DATA]:
+                try:
+                    messenger.send_message(response)
+                except OSError:
+                    self.remove_client(messenger.sock)
+            else:
+                response = self.RESPONSE_400
+                response[self.ERROR] = 'Нет публичного ключа для данного пользователя'
+                try:
+                    messenger.send_message(response)
+                except OSError:
+                    self.remove_client(messenger.sock)
+
         # Иначе отдаём Bad request
         else:
             messenger.send_message(self.BAD_REQUEST)
+
+    def authorize_user(self, messenger, message):
+        client_name = message[self.USER][self.ACCOUNT_NAME]
+        if client_name in self.messengers.keys():
+            response = self.RESPONSE_400
+            response[self.ERROR] = 'Имя пользователя уже занято.'
+            messenger.send_message(response)
+            self.clients.remove(messenger.sock)
+            messenger.sock.close()
+            return
+
+            # Проверяем что пользователь зарегистрирован на сервере.
+        if not self.db_session.check_user(client_name):
+            response = self.RESPONSE_400
+            response[self.ERROR] = 'Пользователь не зарегистрирован.'
+            try:
+                LOGGER.debug(f'Unknown username, sending {response}')
+                messenger.send_message(response)
+            except OSError:
+                pass
+            self.clients.remove(messenger.sock)
+            messenger.sock.close()
+            return
+
+        LOGGER.debug('Correct username, starting passwd check.')
+        # Иначе отвечаем 511 и проводим процедуру авторизации
+        # Словарь - заготовка
+        message_auth = self.RESPONSE_511
+        # Набор байтов в hex представлении
+        random_str = binascii.hexlify(os.urandom(64))
+        # В словарь байты нельзя, декодируем (json.dumps -> TypeError)
+        message_auth[self.DATA] = random_str.decode('ascii')
+        # Создаём хэш пароля и связки с рандомной строкой, сохраняем
+        # серверную версию ключа
+        hash = hmac.new(self.db_session.get_hash(client_name), random_str, 'MD5')
+        digest = hash.digest()
+        LOGGER.debug(f'Auth message = {message_auth}')
+        try:
+            # Обмен с клиентом
+            messenger.send_message(message_auth)
+            ans = messenger.get_message()
+        except OSError as err:
+            LOGGER.debug('Error in auth, data:', exc_info=err)
+            self.clients.remove(messenger.sock)
+            messenger.sock.close()
+            return
+
+        client_digest = binascii.a2b_base64(ans[self.DATA])
+        # Если ответ клиента корректный, то сохраняем его в список
+        # пользователей.
+        if not (self.RESPONSE in ans and ans[self.RESPONSE] == 511 and hmac.compare_digest(
+                digest, client_digest)):
+            response = self.RESPONSE_400
+            response[self.ERROR] = 'Неверный пароль.'
+            try:
+                messenger.send_message(response)
+            except OSError:
+                pass
+            self.clients.remove(messenger.sock)
+            messenger.sock.close()
+
+        self.messengers[client_name] = messenger
+        client_ip, client_port = messenger.sock.getpeername()
+        try:
+            messenger.send_message(self.RESPONSE_200)
+        except OSError:
+            self.remove_client(client_name)
+        # добавляем пользователя в список активных и если у него изменился открытый ключ
+        # сохраняем новый
+        client_pubkey = message[self.USER][self.PUBLIC_KEY]
+        self.db_session.user_login(client_name, client_ip, client_port, client_pubkey)
+        self.fire(self.on_connections_change)
 
     @Log()
     def process_message(self, message, listen_socks):
@@ -195,7 +275,6 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
         Функция адресной отправки сообщения определённому клиенту. Принимает словарь сообщение,
         список зарегистрированых пользователей и слушающие сокеты. Ничего не возвращает.
         :param message:
-        :param names:
         :param listen_socks:
         :return:
         """
@@ -211,6 +290,14 @@ class JIMServer(JIMBase, metaclass=ServerInspector):
             LOGGER.error(
                 f'Пользователь {message[self.DESTINATION]} не зарегистрирован на сервере, '
                 f'отправка сообщения невозможна.')
+
+    def service_update_lists(self):
+        '''Метод реализующий отправки сервисного сообщения 205 клиентам.'''
+        for messenger in self.messengers:
+            try:
+                messenger.send_message(self.RESPONSE_205)
+            except OSError:
+                self.remove_client(messenger.sock)
 
     @staticmethod
     def fire(subscription_list):

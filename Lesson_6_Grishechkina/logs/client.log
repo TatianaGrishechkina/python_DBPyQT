@@ -820,3 +820,533 @@ how do you do?
 2021-04-13 23:39:17,505 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618346357.5055714, 'user': 'KIBORG1'}
 2021-04-13 23:39:17,975 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG2', 'KIBORG3']}
 2021-04-13 23:39:17,978 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG2']}
+2021-04-16 00:42:14,020 CRITICAL client.py Необработанная ошибка: 'UserNameDialog' object has no attribute 'client_passwd'
+2021-04-16 01:02:55,203 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:02:55,218 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:02:55,222 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'publickey'
+2021-04-16 01:02:55,238 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'publickey'
+2021-04-16 01:03:50,688 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:03:52,709 CRITICAL transport.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2021-04-16 01:06:25,395 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:06:27,417 CRITICAL transport.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2021-04-16 01:06:55,171 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:06:55,189 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'publickey'
+2021-04-16 01:08:22,024 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:08:22,042 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'publickey'
+2021-04-16 01:08:57,181 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:08:57,200 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'publickey'
+2021-04-16 01:09:02,991 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:09:03,012 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'publickey'
+2021-04-16 01:09:15,247 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:11:24,210 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:11:27,948 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:11:28,455 CRITICAL client.py Необработанная ошибка: Пользователь не зарегистрирован.
+2021-04-16 01:12:56,341 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:12:56,376 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:12:56,386 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:12:56,405 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:12:56,740 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:12:57,252 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:12:57,252 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'encode'
+2021-04-16 01:12:59,503 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG4
+2021-04-16 01:13:00,006 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:13:00,006 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'encode'
+2021-04-16 01:13:01,800 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:13:02,303 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:13:02,304 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'encode'
+2021-04-16 01:13:08,535 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:13:09,037 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:13:09,038 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'encode'
+2021-04-16 01:13:24,521 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:13:27,063 CRITICAL transport.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2021-04-16 01:13:51,175 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:14:00,906 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:14:07,917 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:14:22,628 CRITICAL client.py Необработанная ошибка: 'NoneType' object has no attribute 'encode'
+2021-04-16 01:14:28,870 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:14:33,318 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:14:37,094 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:17:16,249 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:17:16,604 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:17:17,108 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:17:17,108 CRITICAL client.py Необработанная ошибка: 'JIMClient' object has no attribute 'username'
+2021-04-16 01:17:46,271 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:17:46,625 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:17:47,128 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:17:47,196 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:17:47,197 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': {'response': 511, 'bin': 'dEjQ6IUWJOrlgFt/Wrv36w==\n'}, 'time': 1618525067.1975834, 'mess_text': <socket.socket fd=612, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56891), raddr=('127.0.0.1', 7777)>}
+2021-04-16 01:17:47,197 CRITICAL client.py Необработанная ошибка: Object of type socket is not JSON serializable
+2021-04-16 01:18:07,196 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:18:07,703 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:18:08,204 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:18:11,565 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:18:13,115 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': {'response': 511, 'bin': 'bqS2raD/7vzi8ilY9Kq63w==\n'}, 'time': 1618525093.1154406, 'mess_text': <socket.socket fd=1140, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56908), raddr=('127.0.0.1', 7777)>}
+2021-04-16 01:18:47,830 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:18:48,185 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:18:48,687 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:18:48,757 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:18:48,758 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:18:48,759 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:18:48,812 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:18:49,333 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:18:49,333 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525129.3335338, 'user': 'KIBORG1'}
+2021-04-16 01:18:49,816 DEBUG transport.py Получен ответ {'response': 202, 'data_list': []}
+2021-04-16 01:19:02,960 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:19:02,960 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:19:02,977 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:19:02,979 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:19:03,352 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:19:03,358 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:19:03,370 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:19:03,373 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:19:03,373 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG4
+2021-04-16 01:19:03,442 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:19:03,442 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:19:03,444 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:19:03,500 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:19:03,500 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:19:03,571 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:19:03,572 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:19:03,573 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:19:03,593 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:19:03,614 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:19:03,665 DEBUG transport.py Passwd hash ready: b'555b77419830f3e5b2e5cafcc079eb01c9db971593a7ea3c15146003b9a141defb231dcd6e5f4b14147192179fdb2d109bda1b7620feffb9a6f797102c598393'
+2021-04-16 01:19:03,665 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:19:03,667 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:19:03,716 DEBUG transport.py Запрос списка известных пользователей KIBORG3
+2021-04-16 01:19:03,729 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:19:03,746 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:19:03,746 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525143.7461407, 'user': 'KIBORG2'}
+2021-04-16 01:19:03,747 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:19:03,747 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525143.7472043, 'user': 'KIBORG1'}
+2021-04-16 01:19:03,809 DEBUG transport.py Passwd hash ready: b'2e0211c3c6cebd42eab200c3873e984e5619c9a1a28880a290614a8f7bd332833461f9887d1005a2fe9583caa502881296eb7b398cf8b54e52b9cfb2915d774c'
+2021-04-16 01:19:03,810 CRITICAL client.py Необработанная ошибка: Неверный пароль.
+2021-04-16 01:22:33,737 CRITICAL client.py Необработанная ошибка: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2021-04-16 01:22:33,738 CRITICAL client.py Необработанная ошибка: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2021-04-16 01:22:33,738 CRITICAL client.py Необработанная ошибка: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2021-04-16 01:22:33,738 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:22:41,214 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:22:41,215 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:22:41,220 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:22:41,589 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:22:41,595 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:22:41,595 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:22:41,603 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:22:41,672 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:22:41,672 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:22:41,674 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:22:41,694 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:22:41,722 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:22:41,766 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:22:41,767 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:22:41,769 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:22:41,788 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:22:41,821 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:22:41,860 DEBUG transport.py Passwd hash ready: b'555b77419830f3e5b2e5cafcc079eb01c9db971593a7ea3c15146003b9a141defb231dcd6e5f4b14147192179fdb2d109bda1b7620feffb9a6f797102c598393'
+2021-04-16 01:22:41,860 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:22:41,862 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:22:41,910 DEBUG transport.py Запрос списка известных пользователей KIBORG3
+2021-04-16 01:22:42,403 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:22:42,403 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525362.403023, 'user': 'KIBORG1'}
+2021-04-16 01:22:42,403 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:22:42,403 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525362.4039624, 'user': 'KIBORG3'}
+2021-04-16 01:22:42,403 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525362.4039624, 'user': 'KIBORG2'}
+2021-04-16 01:22:42,883 DEBUG transport.py Получен ответ {'response': 202, 'data_list': []}
+2021-04-16 01:22:42,885 DEBUG transport.py Получен ответ {'response': 202, 'data_list': []}
+2021-04-16 01:22:42,886 DEBUG transport.py Получен ответ {'response': 202, 'data_list': []}
+2021-04-16 01:22:58,297 DEBUG transport.py Создание контакта KIBORG3
+2021-04-16 01:22:58,424 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x054DCAD8>
+2021-04-16 01:23:03,787 DEBUG transport.py Создание контакта KIBORG2
+2021-04-16 01:23:03,945 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x054DCDF0>
+2021-04-16 01:23:07,021 DEBUG transport.py Создание контакта KIBORG4
+2021-04-16 01:23:07,467 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x054DCA90>
+2021-04-16 01:23:12,329 DEBUG transport.py Создание контакта KIBORG1
+2021-04-16 01:23:12,500 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x0512AB68>
+2021-04-16 01:23:16,413 DEBUG transport.py Создание контакта KIBORG3
+2021-04-16 01:23:16,527 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x0512AE38>
+2021-04-16 01:23:21,345 DEBUG transport.py Создание контакта KIBORG1
+2021-04-16 01:23:21,559 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x0562BB20>
+2021-04-16 01:23:25,543 DEBUG transport.py Создание контакта KIBORG2
+2021-04-16 01:23:25,576 INFO main_window.py Успешно добавлен контакт <PyQt5.QtGui.QStandardItem object at 0x0562BE38>
+2021-04-16 01:23:28,718 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:23:29,074 ERROR transport.py Не удалось получить ключ собеседникаKIBORG1.
+2021-04-16 01:23:29,075 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:23:33,822 DEBUG transport.py Запрос публичного ключа для KIBORG2
+2021-04-16 01:23:34,580 ERROR transport.py Не удалось получить ключ собеседникаKIBORG2.
+2021-04-16 01:23:34,580 DEBUG main_window.py Загружен открытый ключ для KIBORG2
+2021-04-16 01:26:26,240 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:26:26,310 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:26:26,381 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:26:45,655 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:26:45,662 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:26:45,675 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:26:46,053 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:26:46,058 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:26:46,066 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:26:46,067 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:26:46,137 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:26:46,138 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:26:46,140 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:26:46,189 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:26:46,199 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:26:46,270 DEBUG transport.py Passwd hash ready: b'555b77419830f3e5b2e5cafcc079eb01c9db971593a7ea3c15146003b9a141defb231dcd6e5f4b14147192179fdb2d109bda1b7620feffb9a6f797102c598393'
+2021-04-16 01:26:46,271 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:26:46,272 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:26:46,292 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:26:46,323 DEBUG transport.py Запрос списка известных пользователей KIBORG3
+2021-04-16 01:26:46,365 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:26:46,365 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:26:46,367 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:26:46,415 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:26:46,907 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:26:46,907 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525606.9078186, 'user': 'KIBORG2'}
+2021-04-16 01:26:46,909 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:26:46,909 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525606.909807, 'user': 'KIBORG1'}
+2021-04-16 01:26:46,909 DEBUG transport.py Запрос контакт листа для пользователся KIBORG3
+2021-04-16 01:26:46,910 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525606.909807, 'user': 'KIBORG3'}
+2021-04-16 01:26:47,389 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:26:47,391 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG2']}
+2021-04-16 01:26:47,393 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:26:53,415 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:26:53,908 DEBUG main_window.py Не удалось получить ключ для KIBORG1
+2021-04-16 01:31:09,878 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:31:09,879 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:31:39,060 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:31:39,061 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:31:39,092 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:31:39,443 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:31:39,447 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:31:39,456 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:31:39,470 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:31:39,526 DEBUG transport.py Passwd hash ready: b'555b77419830f3e5b2e5cafcc079eb01c9db971593a7ea3c15146003b9a141defb231dcd6e5f4b14147192179fdb2d109bda1b7620feffb9a6f797102c598393'
+2021-04-16 01:31:39,527 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:31:39,529 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:31:39,569 DEBUG transport.py Запрос списка известных пользователей KIBORG3
+2021-04-16 01:31:39,593 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:31:39,612 DEBUG transport.py Запрос контакт листа для пользователся KIBORG3
+2021-04-16 01:31:39,612 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525899.6127117, 'user': 'KIBORG3'}
+2021-04-16 01:31:39,665 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:31:39,666 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:31:39,668 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:31:39,690 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:31:39,707 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:31:39,760 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:31:39,761 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:31:39,763 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:31:39,805 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:31:40,284 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG2']}
+2021-04-16 01:31:40,309 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:31:40,309 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525900.3091578, 'user': 'KIBORG2'}
+2021-04-16 01:31:40,310 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:31:40,311 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618525900.3101962, 'user': 'KIBORG1'}
+2021-04-16 01:31:40,788 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:31:40,790 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:31:44,933 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:31:45,301 DEBUG main_window.py Не удалось получить ключ для KIBORG1
+2021-04-16 01:33:22,682 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:33:22,830 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:33:44,455 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:33:44,463 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:33:44,470 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:33:44,845 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:33:44,857 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:33:44,865 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:33:44,868 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:33:44,935 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:33:44,935 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:33:44,937 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:33:44,959 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:33:45,008 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:33:45,034 DEBUG transport.py Passwd hash ready: b'555b77419830f3e5b2e5cafcc079eb01c9db971593a7ea3c15146003b9a141defb231dcd6e5f4b14147192179fdb2d109bda1b7620feffb9a6f797102c598393'
+2021-04-16 01:33:45,034 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:33:45,036 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:33:45,054 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:33:45,105 DEBUG transport.py Запрос списка известных пользователей KIBORG3
+2021-04-16 01:33:45,129 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:33:45,129 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:33:45,131 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:33:45,196 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:33:45,675 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:33:45,675 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526025.6751392, 'user': 'KIBORG1'}
+2021-04-16 01:33:45,675 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:33:45,675 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526025.6751392, 'user': 'KIBORG2'}
+2021-04-16 01:33:45,677 DEBUG transport.py Запрос контакт листа для пользователся KIBORG3
+2021-04-16 01:33:45,677 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526025.6771383, 'user': 'KIBORG3'}
+2021-04-16 01:33:46,154 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:33:46,156 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG2']}
+2021-04-16 01:33:46,157 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:33:48,720 DEBUG transport.py Запрос публичного ключа для KIBORG3
+2021-04-16 01:33:49,168 DEBUG main_window.py Не удалось получить ключ для KIBORG3
+2021-04-16 01:34:06,817 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:34:06,824 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:34:51,221 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:34:51,568 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:34:52,086 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:34:52,154 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:34:52,154 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:34:52,155 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:34:52,193 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:34:52,785 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:34:52,786 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526092.7851295, 'user': 'KIBORG1'}
+2021-04-16 01:34:53,217 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:35:08,388 DEBUG transport.py Запрос публичного ключа для KIBORG2
+2021-04-16 01:35:13,388 DEBUG main_window.py Не удалось получить ключ для KIBORG2
+2021-04-16 01:35:44,912 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:36:29,709 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:36:29,710 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:36:29,722 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:36:30,087 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:36:30,093 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:36:30,095 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:36:30,101 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:36:30,170 DEBUG transport.py Passwd hash ready: b'555b77419830f3e5b2e5cafcc079eb01c9db971593a7ea3c15146003b9a141defb231dcd6e5f4b14147192179fdb2d109bda1b7620feffb9a6f797102c598393'
+2021-04-16 01:36:30,171 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:36:30,173 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:36:30,197 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:36:30,216 DEBUG transport.py Запрос списка известных пользователей KIBORG3
+2021-04-16 01:36:30,272 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:36:30,273 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:36:30,274 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:36:30,315 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:36:30,339 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:36:30,408 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:36:30,409 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:36:30,410 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:36:30,449 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:36:30,986 DEBUG transport.py Запрос контакт листа для пользователся KIBORG3
+2021-04-16 01:36:30,987 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526190.9875486, 'user': 'KIBORG3'}
+2021-04-16 01:36:30,987 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:36:30,988 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526190.988551, 'user': 'KIBORG2'}
+2021-04-16 01:36:31,037 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:36:31,037 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526191.0375485, 'user': 'KIBORG1'}
+2021-04-16 01:36:31,468 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG2']}
+2021-04-16 01:36:31,470 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:36:31,472 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:36:34,532 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:36:34,976 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:36:46,735 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG2', 'to': 'KIBORG1', 'time': 1618526206.735949, 'mess_text': 'b1C9b0atpHrtl4fmQLE35d5YZjGAXmz7ZavrNjyamJhwA/WcYtA0/2a6JfbXnjhtpPglBLkl0n7UWdrzNpQHGjo4BFnZBvgNvoOUlmWNsSgI8ujllM5PTfZrAKGDnfSq21WRgv4nrHcBpTX0LNrJYTYqXVp0x1fOqAH7Q+AicTUh6vY/shbqULlewt2NYbN4cQK6LDq8EYx0pSc8WlyE21u6pNie8Uf1Rv5xO8HYEu4+8z9ZdkL6Cn0kETQS8yD15iIxWaUF2WTx4Hr5UVVE5b8cIGwyE+DShvFNcdCEOS54xBECs0xl0dHTkhqFvaaEZ6phgNrpf4/DElKslWWA0g=='}
+2021-04-16 01:36:46,749 DEBUG main_window.py Отправлено сообщение для KIBORG1: Я зашифровал это сообщение
+2021-04-16 01:36:47,665 INFO transport.py Получено сообщение от пользователя KIBORG2:
+b1C9b0atpHrtl4fmQLE35d5YZjGAXmz7ZavrNjyamJhwA/WcYtA0/2a6JfbXnjhtpPglBLkl0n7UWdrzNpQHGjo4BFnZBvgNvoOUlmWNsSgI8ujllM5PTfZrAKGDnfSq21WRgv4nrHcBpTX0LNrJYTYqXVp0x1fOqAH7Q+AicTUh6vY/shbqULlewt2NYbN4cQK6LDq8EYx0pSc8WlyE21u6pNie8Uf1Rv5xO8HYEu4+8z9ZdkL6Cn0kETQS8yD15iIxWaUF2WTx4Hr5UVVE5b8cIGwyE+DShvFNcdCEOS54xBECs0xl0dHTkhqFvaaEZ6phgNrpf4/DElKslWWA0g==
+2021-04-16 01:37:28,279 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:37:28,279 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:37:38,271 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:37:38,282 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:37:38,291 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:37:38,648 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:37:38,654 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG3
+2021-04-16 01:37:38,659 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:37:38,662 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:37:38,731 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:37:38,732 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:37:38,733 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:37:38,790 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:37:38,797 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:37:38,871 DEBUG transport.py Passwd hash ready: b'555b77419830f3e5b2e5cafcc079eb01c9db971593a7ea3c15146003b9a141defb231dcd6e5f4b14147192179fdb2d109bda1b7620feffb9a6f797102c598393'
+2021-04-16 01:37:38,871 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:37:38,873 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:37:38,893 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:37:38,913 DEBUG transport.py Запрос списка известных пользователей KIBORG3
+2021-04-16 01:37:38,965 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:37:38,965 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:37:38,967 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:37:39,016 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:37:39,539 DEBUG transport.py Запрос контакт листа для пользователся KIBORG3
+2021-04-16 01:37:39,540 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526259.5408885, 'user': 'KIBORG3'}
+2021-04-16 01:37:39,541 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:37:39,541 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526259.5418837, 'user': 'KIBORG1'}
+2021-04-16 01:37:39,541 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:37:39,541 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526259.5418837, 'user': 'KIBORG2'}
+2021-04-16 01:37:40,020 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:37:40,022 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG2']}
+2021-04-16 01:37:40,024 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:37:40,079 CRITICAL client.py Необработанная ошибка: decorated slot has no signature compatible with JIMClient.new_message[dict]
+2021-04-16 01:37:40,079 CRITICAL client.py Необработанная ошибка: decorated slot has no signature compatible with JIMClient.new_message[dict]
+2021-04-16 01:37:40,104 CRITICAL client.py Необработанная ошибка: decorated slot has no signature compatible with JIMClient.new_message[dict]
+2021-04-16 01:38:34,899 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:38:34,901 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:38:35,266 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:38:35,271 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:38:35,279 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:38:35,347 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:38:35,348 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:38:35,349 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:38:35,399 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:38:35,902 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:38:35,923 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:38:35,923 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526315.923497, 'user': 'KIBORG2'}
+2021-04-16 01:38:35,972 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:38:35,972 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:38:35,974 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:38:36,025 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:38:36,527 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:38:36,553 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:38:36,554 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526316.5549493, 'user': 'KIBORG1'}
+2021-04-16 01:38:37,029 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:38:39,757 DEBUG transport.py Запрос публичного ключа для KIBORG2
+2021-04-16 01:38:40,534 DEBUG main_window.py Загружен открытый ключ для KIBORG2
+2021-04-16 01:38:53,343 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': 'KIBORG2', 'time': 1618526333.3436763, 'mess_text': 'D8YXJU3p4Yek48lQYq9iN+Hf2h2HE7kw2VWGhSPO3XAvz1jZLysqW3PH2SnUkFtl6+EeRos+qAOIdVfVQca/y7MBOaBTyGvPSl/f9mctJ9NYp81Q3RCH7TzV1in9pwPTurNCxfgN5Y7bAZTVNNQI8TPEJgPay0gEXLWBmZb8rpPwNjBYrxoxQCZ0t2DlsP7U+HD5yEGkCFOEGzMyCBDwJFer8M/dsvqKwt9rQRq2ALwlx6WmeUv5py4DbqqLWW+qCMIUsy4ObjBQSXH4dJXBERLKIU2ZWvkwTLBhBeYlW+f91DW4Q3ZOBy3Cz49MvdVA7x9Li3dqH2fKFIX3n11tKg=='}
+2021-04-16 01:38:53,357 DEBUG main_window.py Отправлено сообщение для KIBORG2: Напился что ли?
+2021-04-16 01:38:54,129 INFO transport.py Получено сообщение от пользователя KIBORG1:
+D8YXJU3p4Yek48lQYq9iN+Hf2h2HE7kw2VWGhSPO3XAvz1jZLysqW3PH2SnUkFtl6+EeRos+qAOIdVfVQca/y7MBOaBTyGvPSl/f9mctJ9NYp81Q3RCH7TzV1in9pwPTurNCxfgN5Y7bAZTVNNQI8TPEJgPay0gEXLWBmZb8rpPwNjBYrxoxQCZ0t2DlsP7U+HD5yEGkCFOEGzMyCBDwJFer8M/dsvqKwt9rQRq2ALwlx6WmeUv5py4DbqqLWW+qCMIUsy4ObjBQSXH4dJXBERLKIU2ZWvkwTLBhBeYlW+f91DW4Q3ZOBy3Cz49MvdVA7x9Li3dqH2fKFIX3n11tKg==
+2021-04-16 01:40:48,886 CRITICAL transport.py Потеряно соединение с сервером.
+2021-04-16 01:40:56,933 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:40:56,935 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:40:57,293 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:40:57,304 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:40:57,312 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:40:57,381 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:40:57,382 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:40:57,383 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:40:57,434 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:40:57,937 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:40:57,957 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:40:57,957 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526457.9575408, 'user': 'KIBORG2'}
+2021-04-16 01:40:58,013 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:40:58,014 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:40:58,016 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:40:58,067 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:40:58,569 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:40:58,595 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:40:58,596 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526458.596908, 'user': 'KIBORG1'}
+2021-04-16 01:40:59,072 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:41:03,466 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:41:03,577 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:41:16,807 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG2', 'to': 'KIBORG1', 'time': 1618526476.8079617, 'mess_text': 'pD1nU6r0nbWGMzPPNhA9ZkOQrnQjKwOfartGJIMbS6CPf0awkAWJUOUHNGan9Jwfz8AFxFvPqZ0Mb0Dx1aMUCY2rFbF/9GyZIGEaidUrQFSEsEFF8kR6150BWwVdYQK60LdqOXC8A201v3t6RnscJRFs8gQ6IwjtnVOGPpi44CRrwbyg8WiLFqy6YQfKOHDpgDaqelL9eA31n9BHzuUPvoa0Ywko3c8yguEMnK4DJLTcM/F59HaEIMxfjmh70uzLNLsL/nJU8mrif9YaKxjpW1XQO0B5N+d3yRo3evnEGClO/OteBQej9oQ+yLIP0ZW34B014PU2XB09K4oWWEbXVA=='}
+2021-04-16 01:41:16,818 DEBUG main_window.py Отправлено сообщение для KIBORG1: Т-т-т-ы мен-я уважае-ешь?
+2021-04-16 01:41:17,095 INFO transport.py Получено сообщение от пользователя KIBORG2:
+pD1nU6r0nbWGMzPPNhA9ZkOQrnQjKwOfartGJIMbS6CPf0awkAWJUOUHNGan9Jwfz8AFxFvPqZ0Mb0Dx1aMUCY2rFbF/9GyZIGEaidUrQFSEsEFF8kR6150BWwVdYQK60LdqOXC8A201v3t6RnscJRFs8gQ6IwjtnVOGPpi44CRrwbyg8WiLFqy6YQfKOHDpgDaqelL9eA31n9BHzuUPvoa0Ywko3c8yguEMnK4DJLTcM/F59HaEIMxfjmh70uzLNLsL/nJU8mrif9YaKxjpW1XQO0B5N+d3yRo3evnEGClO/OteBQej9oQ+yLIP0ZW34B014PU2XB09K4oWWEbXVA==
+2021-04-16 01:41:50,348 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:41:50,355 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:41:50,709 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:41:50,716 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:41:50,727 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:41:50,799 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:41:50,800 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:41:50,802 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:41:50,856 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:41:51,352 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:41:51,372 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:41:51,372 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526511.372855, 'user': 'KIBORG1'}
+2021-04-16 01:41:51,424 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:41:51,425 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:41:51,427 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:41:51,476 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:41:51,978 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:41:52,002 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:41:52,003 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526512.0034344, 'user': 'KIBORG2'}
+2021-04-16 01:41:52,482 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:41:56,473 DEBUG transport.py Запрос публичного ключа для KIBORG2
+2021-04-16 01:41:56,987 DEBUG main_window.py Загружен открытый ключ для KIBORG2
+2021-04-16 01:42:03,719 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': 'KIBORG2', 'time': 1618526523.718542, 'mess_text': 'VjX2tGX6mYsPmadpjrsGMmI9WiMpCdO7DddRmKPRWuBmy8VWmI4jhyKXx06aD/wfTGD9cyoG8dMwVxmhcyceaBjxfMJfhsLq7URQOXI8E/b7wo0HvJmPXVw7UPmyx/w8bvtp3OyXd27O9W1MIvb9pIlkH/LyHwZZgLFOBSaOWWUs+/os3ZsonhWfs4t9ImRcnrutf61SDuzky9DLRJaoncCFuWAQjS/tvA9UafeeIVO1j02w32Rq/2gZrduNLSb2Wm6aHic9ozQbNL+1smMwRxFWW1xmtuxR7mePbA1yBgBMmRow5lmExcOOFoipGa8CZFoXNRGaVP4zYvqr3oZgaA=='}
+2021-04-16 01:42:03,734 DEBUG main_window.py Отправлено сообщение для KIBORG2: Убить всех человеков!
+2021-04-16 01:42:04,265 INFO transport.py Получено сообщение от пользователя KIBORG1:
+VjX2tGX6mYsPmadpjrsGMmI9WiMpCdO7DddRmKPRWuBmy8VWmI4jhyKXx06aD/wfTGD9cyoG8dMwVxmhcyceaBjxfMJfhsLq7URQOXI8E/b7wo0HvJmPXVw7UPmyx/w8bvtp3OyXd27O9W1MIvb9pIlkH/LyHwZZgLFOBSaOWWUs+/os3ZsonhWfs4t9ImRcnrutf61SDuzky9DLRJaoncCFuWAQjS/tvA9UafeeIVO1j02w32Rq/2gZrduNLSb2Wm6aHic9ozQbNL+1smMwRxFWW1xmtuxR7mePbA1yBgBMmRow5lmExcOOFoipGa8CZFoXNRGaVP4zYvqr3oZgaA==
+2021-04-16 01:42:07,055 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:42:07,501 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:42:16,827 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:42:17,011 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:42:27,287 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG2', 'to': 'KIBORG1', 'time': 1618526547.2875333, 'mess_text': 'uE3P4KMNlaon+veH7w2Ltm2Mc2rhWx3qVl5mMQXpfsYdA/dyLVd/Sep1J1U9cxC2bO1fyw/yCSkob5ywZ1sCONqft5nOjrHd3KwbUbNM6PTzBQpZ1LtmWSuWgbPHopBcGcD9D4ENrzNFHvsTZ6rXNqkqeABCCv2taAF/BLBxbwmeCtg5QtTsDNRarmWI7Io5s7RMC7uv/JZ4Bgv49+NejGCWv0X5FkTEpb+sIjQnTgPwzLr6v8DvO7p8hb807onxuJiT08/bkps4JNpLrCcbtK2AsFY9uMZXLEGsRBaou+eVmTdLeY7IiNGSuag9BvKylHvrAOnD4QiofK47hjI6KQ=='}
+2021-04-16 01:42:27,294 DEBUG main_window.py Отправлено сообщение для KIBORG1: Осталось понять,
+ о чем мы вообще говорим
+2021-04-16 01:42:27,691 INFO transport.py Получено сообщение от пользователя KIBORG2:
+uE3P4KMNlaon+veH7w2Ltm2Mc2rhWx3qVl5mMQXpfsYdA/dyLVd/Sep1J1U9cxC2bO1fyw/yCSkob5ywZ1sCONqft5nOjrHd3KwbUbNM6PTzBQpZ1LtmWSuWgbPHopBcGcD9D4ENrzNFHvsTZ6rXNqkqeABCCv2taAF/BLBxbwmeCtg5QtTsDNRarmWI7Io5s7RMC7uv/JZ4Bgv49+NejGCWv0X5FkTEpb+sIjQnTgPwzLr6v8DvO7p8hb807onxuJiT08/bkps4JNpLrCcbtK2AsFY9uMZXLEGsRBaou+eVmTdLeY7IiNGSuag9BvKylHvrAOnD4QiofK47hjI6KQ==
+2021-04-16 01:42:41,510 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': 'KIBORG2', 'time': 1618526561.510187, 'mess_text': 'I60X36eFeyrthW0xp9HXfcARXokPVci8EaQ7bckkQlr2Ac7/EXmQe3/qg/zGPKBcpOyHR63oycSDsKDF4kqkGgeY/6MNnpTL2gs4aJqrkq5iE8h5VNSCCixnREalmrHvuWwmJ0MjPsZadwmT0ge2bvF6cOYdHGWK+eFIbJxk1xASIvy3VNJmIJhqziOLhZezoNg6UuSRfbc99dVUbFCT2fRt9goAKoN8XMiezC8O3eJR6dEyJiIZvB//mmyIfPL7xWoOh7VkJfL66sOHXioD6VS9OD2xVG7Hiw6jm/KuYxl788iqVHjOBe+vbtcoRXDE6reJcYxhxcNE6cRk7fPKjg=='}
+2021-04-16 01:42:41,528 DEBUG main_window.py Отправлено сообщение для KIBORG2: Аааа
+2021-04-16 01:42:41,541 INFO transport.py Получено сообщение от пользователя KIBORG1:
+I60X36eFeyrthW0xp9HXfcARXokPVci8EaQ7bckkQlr2Ac7/EXmQe3/qg/zGPKBcpOyHR63oycSDsKDF4kqkGgeY/6MNnpTL2gs4aJqrkq5iE8h5VNSCCixnREalmrHvuWwmJ0MjPsZadwmT0ge2bvF6cOYdHGWK+eFIbJxk1xASIvy3VNJmIJhqziOLhZezoNg6UuSRfbc99dVUbFCT2fRt9goAKoN8XMiezC8O3eJR6dEyJiIZvB//mmyIfPL7xWoOh7VkJfL66sOHXioD6VS9OD2xVG7Hiw6jm/KuYxl788iqVHjOBe+vbtcoRXDE6reJcYxhxcNE6cRk7fPKjg==
+2021-04-16 01:42:43,663 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': 'KIBORG2', 'time': 1618526563.663053, 'mess_text': 'VjoC/IfuHCwbOqYSQ2TzZkuJP7pzU1AOW7BJ4X3fffRWcJg+wu4e0oSukCA4zglJV4w72fzDF0XxYI95j9IeOLAy0ByZ1LDkuz/fIeYCMiDkg+jUxLHvTsxNrI6NeVyHpUljDA/MdS+j8kKRg8smHZOuebQppoVHc6vg7Rqc/qyB7/TMaW/P8qbiab3x9SIhwhJJ2ix1p08TL/kxLLGIa5lzXf131muWBGCd3K78bZeM9JrYZ4Xdod93SWYPcpT0BfRXI/JcSbUMNDHzPJXn9CbTonw7cvlZHdIWcMEvVo0bciXImm9w3mXx8KRDoBdInqxxZcDK84EA3cu7DFg6Eg=='}
+2021-04-16 01:42:43,680 DEBUG main_window.py Отправлено сообщение для KIBORG2: Я прозрел
+2021-04-16 01:42:44,058 INFO transport.py Получено сообщение от пользователя KIBORG1:
+VjoC/IfuHCwbOqYSQ2TzZkuJP7pzU1AOW7BJ4X3fffRWcJg+wu4e0oSukCA4zglJV4w72fzDF0XxYI95j9IeOLAy0ByZ1LDkuz/fIeYCMiDkg+jUxLHvTsxNrI6NeVyHpUljDA/MdS+j8kKRg8smHZOuebQppoVHc6vg7Rqc/qyB7/TMaW/P8qbiab3x9SIhwhJJ2ix1p08TL/kxLLGIa5lzXf131muWBGCd3K78bZeM9JrYZ4Xdod93SWYPcpT0BfRXI/JcSbUMNDHzPJXn9CbTonw7cvlZHdIWcMEvVo0bciXImm9w3mXx8KRDoBdInqxxZcDK84EA3cu7DFg6Eg==
+2021-04-16 01:44:10,181 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:44:10,181 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:44:10,538 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:44:10,551 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:44:10,562 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:44:10,630 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:44:10,631 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:44:10,632 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:44:10,672 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:44:11,182 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:44:11,202 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:44:11,202 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526651.2027352, 'user': 'KIBORG2'}
+2021-04-16 01:44:11,256 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:44:11,257 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:44:11,259 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:44:11,309 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:44:11,811 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:44:11,836 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:44:11,836 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526651.8363035, 'user': 'KIBORG1'}
+2021-04-16 01:44:12,315 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:44:17,769 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:44:18,320 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:44:21,065 DEBUG transport.py Запрос публичного ключа для KIBORG2
+2021-04-16 01:44:21,824 DEBUG main_window.py Загружен открытый ключ для KIBORG2
+2021-04-16 01:44:26,863 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': 'KIBORG2', 'time': 1618526666.863006, 'mess_text': 'CDLWY8pCnmI7tUcqYm1Jy8S3KgnfX8T9alQMx/6vOACBtdaMQmms+iMKQcmnkb0GplbFP2fBvIOOu/KlpSUtdzfsB8Yxk+Lgp3uOCt3Smy3seO5EhEtlAkk3KN8QNra4V9lggS3YnyRJ5qsU/S4tCdS12DxzynrU48IJkOwWwGw1Ia4kM7JZ8X68wc9sZ5OlqbXZB0UQBvtY96dath1Fs7J18ucq9J15YJywLRu3R2eQACpfmhlBd1gHeu8/y4+o8m5ESUO57iAO8mwG6LbV1QX4WNhepXyWbwFM/gaQqWTCMC6HUnF++qvg86ZyG/3XH3+uUHQncMqjKlt0483WKA=='}
+2021-04-16 01:44:26,884 DEBUG main_window.py Отправлено сообщение для KIBORG2: Неужели?
+2021-04-16 01:44:27,930 INFO transport.py Получено сообщение от пользователя KIBORG1:
+CDLWY8pCnmI7tUcqYm1Jy8S3KgnfX8T9alQMx/6vOACBtdaMQmms+iMKQcmnkb0GplbFP2fBvIOOu/KlpSUtdzfsB8Yxk+Lgp3uOCt3Smy3seO5EhEtlAkk3KN8QNra4V9lggS3YnyRJ5qsU/S4tCdS12DxzynrU48IJkOwWwGw1Ia4kM7JZ8X68wc9sZ5OlqbXZB0UQBvtY96dath1Fs7J18ucq9J15YJywLRu3R2eQACpfmhlBd1gHeu8/y4+o8m5ESUO57iAO8mwG6LbV1QX4WNhepXyWbwFM/gaQqWTCMC6HUnF++qvg86ZyG/3XH3+uUHQncMqjKlt0483WKA==
+2021-04-16 01:44:38,078 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG2', 'to': 'KIBORG1', 'time': 1618526678.0786524, 'mess_text': 'AYpFExlKIRlJxY6qi+YyhCIUn78HAJA5qpO81TqkXcArOfWnaaTAFkTKLdUGyDjejmM0FWTn1l/RrHWdriqngjD/1SiYJ4hE+BoEROdY953/9w/EEqmTzTOUA516o6WeZMXx7tk7ur8KjkyUQJ8qFxux4Mt92UPQra7/RUnDe3wGKk4LNtY5Y75dn4tFpm7UiQVkP/MJx3vDdGNcMbuG95O05D4AhoeQuAXChgsiBg9sXQ6P1XtzKqPRwKUJWF9Tm3+75/esQrYVx0npOsb6dPJlfaOr4ZiTbOumEf+8kHEQk7E7C405TXFkSzobCzjrcImgdm8Cbr6i0kOjD0EFlA=='}
+2021-04-16 01:44:38,103 DEBUG main_window.py Отправлено сообщение для KIBORG1: Алё
+2021-04-16 01:44:38,997 INFO transport.py Получено сообщение от пользователя KIBORG2:
+AYpFExlKIRlJxY6qi+YyhCIUn78HAJA5qpO81TqkXcArOfWnaaTAFkTKLdUGyDjejmM0FWTn1l/RrHWdriqngjD/1SiYJ4hE+BoEROdY953/9w/EEqmTzTOUA516o6WeZMXx7tk7ur8KjkyUQJ8qFxux4Mt92UPQra7/RUnDe3wGKk4LNtY5Y75dn4tFpm7UiQVkP/MJx3vDdGNcMbuG95O05D4AhoeQuAXChgsiBg9sXQ6P1XtzKqPRwKUJWF9Tm3+75/esQrYVx0npOsb6dPJlfaOr4ZiTbOumEf+8kHEQk7E7C405TXFkSzobCzjrcImgdm8Cbr6i0kOjD0EFlA==
+2021-04-16 01:46:33,623 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:46:33,629 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:46:33,991 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:46:33,996 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:46:34,007 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:46:34,078 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:46:34,078 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:46:34,080 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:46:34,129 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:46:34,599 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:46:34,616 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:46:34,616 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526794.616522, 'user': 'KIBORG2'}
+2021-04-16 01:46:34,667 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:46:34,667 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:46:34,669 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:46:34,706 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:46:35,186 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:46:35,207 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:46:35,208 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526795.2088115, 'user': 'KIBORG1'}
+2021-04-16 01:46:35,688 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:46:38,314 DEBUG transport.py Запрос публичного ключа для KIBORG2
+2021-04-16 01:46:38,691 DEBUG main_window.py Загружен открытый ключ для KIBORG2
+2021-04-16 01:46:40,737 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:46:41,195 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:46:51,270 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG2', 'to': 'KIBORG1', 'time': 1618526811.2699862, 'mess_text': 'rW9R7634jYNNT92XgcBFaK61MLcDINk1gB3DP85241LKSbk4hBzSoO1pxLXGMiRPKsfEK/WB8zUPZ/47WZI3NBvUIQXxGl7hCzoF/9E4hJKM2W7Oq8lwwuOD9rQD+IllPGZFoLxCU5+uSE777VCNtEVpR04WR/ovrz1ur+v1BQfySrN05kcTBdA49x3dwSkxgZc2Sf56UCgl03Bwo0ELuMGlnD9YlRcxcQDMoRabq+Io614EaFNk/tYDC6ovDQfMVOw60GHh+hvm+aThdTx1KATOJZap1cWiUxDhFDjlu0IwO46pEfHZGkw7PGfXa55TsJUIK9C87QYbom89IKqwdg=='}
+2021-04-16 01:46:52,203 INFO transport.py Получено сообщение от пользователя KIBORG2:
+rW9R7634jYNNT92XgcBFaK61MLcDINk1gB3DP85241LKSbk4hBzSoO1pxLXGMiRPKsfEK/WB8zUPZ/47WZI3NBvUIQXxGl7hCzoF/9E4hJKM2W7Oq8lwwuOD9rQD+IllPGZFoLxCU5+uSE777VCNtEVpR04WR/ovrz1ur+v1BQfySrN05kcTBdA49x3dwSkxgZc2Sf56UCgl03Bwo0ELuMGlnD9YlRcxcQDMoRabq+Io614EaFNk/tYDC6ovDQfMVOw60GHh+hvm+aThdTx1KATOJZap1cWiUxDhFDjlu0IwO46pEfHZGkw7PGfXa55TsJUIK9C87QYbom89IKqwdg==
+2021-04-16 01:47:25,464 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:47:25,474 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1, порт: 7777
+2021-04-16 01:47:25,829 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG2
+2021-04-16 01:47:25,831 DEBUG transport.py Сформировано presence сообщение для пользователя KIBORG1
+2021-04-16 01:47:25,843 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:47:25,911 DEBUG transport.py Passwd hash ready: b'e0d4ccef8307148ea1b68e3fa8303ad4ac323003619fff3edceceba84aa2252663cf0dbb3670c13f1da05f6b6a9f68da800730e5c24de8992244f36d9679522a'
+2021-04-16 01:47:25,912 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:47:25,913 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:47:25,953 DEBUG transport.py Запрос списка известных пользователей KIBORG2
+2021-04-16 01:47:26,464 DEBUG transport.py Получен ответ 511 от сервера!
+2021-04-16 01:47:26,491 DEBUG transport.py Запрос контакт листа для пользователся KIBORG2
+2021-04-16 01:47:26,491 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526846.4915905, 'user': 'KIBORG2'}
+2021-04-16 01:47:26,546 DEBUG transport.py Passwd hash ready: b'fbbb720fb6437359b09e3ab1d686bfe04450b3e773c89edf77a02ebca8d639c8cfda88013c6fe4cab47eca6125e9de36005e71d123e6c43907ede96794fb1339'
+2021-04-16 01:47:26,546 DEBUG transport.py Получен ответ 200 от сервера!
+2021-04-16 01:47:26,548 DEBUG client.py Keys successfully loaded.
+2021-04-16 01:47:26,591 DEBUG transport.py Запрос списка известных пользователей KIBORG1
+2021-04-16 01:47:27,099 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG1', 'KIBORG3']}
+2021-04-16 01:47:27,125 DEBUG transport.py Запрос контакт листа для пользователся KIBORG1
+2021-04-16 01:47:27,125 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1618526847.1257398, 'user': 'KIBORG1'}
+2021-04-16 01:47:27,603 DEBUG transport.py Получен ответ {'response': 202, 'data_list': ['KIBORG3', 'KIBORG2', 'KIBORG4']}
+2021-04-16 01:47:30,154 DEBUG transport.py Запрос публичного ключа для KIBORG2
+2021-04-16 01:47:30,607 DEBUG main_window.py Загружен открытый ключ для KIBORG2
+2021-04-16 01:47:32,254 DEBUG transport.py Запрос публичного ключа для KIBORG1
+2021-04-16 01:47:32,611 DEBUG main_window.py Загружен открытый ключ для KIBORG1
+2021-04-16 01:47:42,470 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG2', 'to': 'KIBORG1', 'time': 1618526862.4705834, 'mess_text': 'qm4Kwi7oYGUlyANvdROfOBm7c+3xbQmkOd7HR2YH+dqwRCwzdEz/4uAQBRJXpn/3V9y0frx0Rqh/cR3cAK7Jo7K6bOXfCqPOHwJE7lhl8gAlZ4Zgx8NW631r5FxJMRCl3yU/6uoKTO/hVjAgAPVwra+4iTgwVkBbgeEb3WTZkJHHiqoQkIudCSuL+0WArUyLuqMlnP4jIOTRf9WM4MZhTwPXC6bAnwmlaHBKreoWZNq7gLCr8T75Xlcf51Mg0wWNUIZOApnmdLXycjCoa+20qhUAPkrE6AMFgZ12Bdx3C2XpX3rbHyo+9AQkcituvhuA1XsgsbJTDjlzVCBy1XvYbg=='}
+2021-04-16 01:47:42,496 DEBUG main_window.py Отправлено сообщение для KIBORG1: Долой мясные мешки!
+2021-04-16 01:47:42,623 INFO transport.py Получено сообщение от пользователя KIBORG2:
+qm4Kwi7oYGUlyANvdROfOBm7c+3xbQmkOd7HR2YH+dqwRCwzdEz/4uAQBRJXpn/3V9y0frx0Rqh/cR3cAK7Jo7K6bOXfCqPOHwJE7lhl8gAlZ4Zgx8NW631r5FxJMRCl3yU/6uoKTO/hVjAgAPVwra+4iTgwVkBbgeEb3WTZkJHHiqoQkIudCSuL+0WArUyLuqMlnP4jIOTRf9WM4MZhTwPXC6bAnwmlaHBKreoWZNq7gLCr8T75Xlcf51Mg0wWNUIZOApnmdLXycjCoa+20qhUAPkrE6AMFgZ12Bdx3C2XpX3rbHyo+9AQkcituvhuA1XsgsbJTDjlzVCBy1XvYbg==
+2021-04-16 01:48:01,302 DEBUG jimbase.py Сформирован словарь сообщения: {'action': 'message', 'sender': 'KIBORG1', 'to': 'KIBORG2', 'time': 1618526881.302407, 'mess_text': 'X3QQhJKEZ0QTeOirqBJ2BXlA+2RW9Mp3cRySuQwInL3H/cMKTHCpr0lUWPMOEcmW9ssl63Z7E2pxLixfqk2hU4RiZOMvV2NnimkEZB/R9f2UJexE4JCXc4so5DLCjV5as2OWgrcCbtc5waalSM0YFYTSeX1BTusCKU/OI/metmBnBLzfaG8tNM5zhjBFk8EGOn6WtiZDQXjwmv6QUC+DGPPw85UDOHdP4wcAlNXnMICkOhclis3zPOlouzGRXFtVvV14V1revZIuLgNpH3WXvqZqTWQpAmxktLt3uZQJyNLeeoMp6ti/0rh7h+PTEzr45ruh+YACo7EeoBU9u1V9Lg=='}
+2021-04-16 01:48:01,324 DEBUG main_window.py Отправлено сообщение для KIBORG2: Несколько радикально, на мой взгляд
+2021-04-16 01:48:01,644 INFO transport.py Получено сообщение от пользователя KIBORG1:
+X3QQhJKEZ0QTeOirqBJ2BXlA+2RW9Mp3cRySuQwInL3H/cMKTHCpr0lUWPMOEcmW9ssl63Z7E2pxLixfqk2hU4RiZOMvV2NnimkEZB/R9f2UJexE4JCXc4so5DLCjV5as2OWgrcCbtc5waalSM0YFYTSeX1BTusCKU/OI/metmBnBLzfaG8tNM5zhjBFk8EGOn6WtiZDQXjwmv6QUC+DGPPw85UDOHdP4wcAlNXnMICkOhclis3zPOlouzGRXFtVvV14V1revZIuLgNpH3WXvqZqTWQpAmxktLt3uZQJyNLeeoMp6ti/0rh7h+PTEzr45ruh+YACo7EeoBU9u1V9Lg==

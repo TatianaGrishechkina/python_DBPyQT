@@ -7,6 +7,8 @@ from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtCore import Qt, QTimer
 from server_config import ServerConfig
 from server_database import ServerDB
+from server_part.add_user import RegisterUser
+from server_part.remove_user import DelUserDialog
 import sys
 # Флаг что был подключён новый пользователь, нужен чтобы не мучать БД
 # постоянными запросами на обновление
@@ -72,6 +74,12 @@ class MainWindow(QMainWindow):
         # Кнопка настроек сервера
         self.config_btn = QAction('Настройки сервера', self)
 
+        # Кнопка регистрации пользователя
+        self.register_btn = QAction('Регистрация пользователя', self)
+
+        # Кнопка удаления пользователя
+        self.remove_btn = QAction('Удаление пользователя', self)
+
         # Кнопка вывести историю сообщений
         self.show_history_button = QAction('История клиентов', self)
 
@@ -85,6 +93,8 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(self.refresh_button)
         self.toolbar.addAction(self.show_history_button)
         self.toolbar.addAction(self.config_btn)
+        self.toolbar.addAction(self.register_btn)
+        self.toolbar.addAction(self.remove_btn)
 
         # Настройки геометрии основного окна
         # Поскольку работать с динамическими размерами мы не умеем, и мало времени на изучение, размер окна фиксирован.
@@ -261,6 +271,18 @@ def run_server_gui(server, config):
         config_window.save_btn.clicked.connect(save_server_config)
         config_window.show()
 
+    def reg_user():
+        '''Метод создающий окно регистрации пользователя.'''
+        global reg_window
+        reg_window = RegisterUser(server)
+        reg_window.show()
+
+    def rem_user():
+        '''Метод создающий окно удаления пользователя.'''
+        global rem_window
+        rem_window = DelUserDialog(server)
+        rem_window.show()
+
     # Функция сохранения настроек
     def save_server_config():
         global config_window
@@ -304,6 +326,8 @@ def run_server_gui(server, config):
     main_window.refresh_button.triggered.connect(list_update)
     main_window.show_history_button.triggered.connect(show_statistics)
     main_window.config_btn.triggered.connect(server_config)
+    main_window.register_btn.triggered.connect(reg_user)
+    main_window.remove_btn.triggered.connect(rem_user)
 
     # Запускаем GUI
     server_app.exec_()

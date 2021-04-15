@@ -28,6 +28,18 @@ class ReqFieldMissingError(Exception):
         return f'В принятом словаре почему-то отсутствует обязательное поле {self.missing_field}.'
 
 
+# Исключение - ошибка протокола JIM
+class JIMError(Exception):
+    def __init__(self, text=''):
+        self.text = text
+
+    def __str__(self):
+        if len(self.text) > 0:
+            return f'Ошибка протокола JIM: {self.text}'
+        else:
+            return f'Ошибка протокола JIM'
+
+
 # Исключение - ошибка сервера
 class ServerError(Exception):
     def __init__(self, text):

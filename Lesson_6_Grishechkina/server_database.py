@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, DateTime
+from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, DateTime, Text
 from sqlalchemy.orm import mapper, sessionmaker
 from common.jimbase import JIMBase
 from decorator import LOGGER
@@ -10,8 +10,11 @@ class ServerDB:
     # Класс - отображение таблицы всех пользователей
     # Экземпляр этого класса = запись в таблице AllUsers
     class ChatUsers:
-        def __init__(self, username):
+        def __init__(self, username, passwd_hash):
             self.name = username
+            self.last_login = datetime.now()
+            self.passwd_hash = passwd_hash
+            self.pubkey = None
             self.id = None
 
     # Класс - отображение таблицы активных пользователей:
@@ -55,7 +58,16 @@ class ServerDB:
             self.session = db.session_maker()
 
         # Функция выполняющяяся при входе пользователя, записывает в базу факт входа
-        def user_login(self, username, ip_address, port):
+        def user_login(self, username, ip_address, port, key):
+            """
+            Метод выполняющийся при входе пользователя, записывает в базу факт входа
+            Обновляет открытый ключ пользователя при его изменении.
+            :param username:
+            :param ip_address:
+            :param port:
+            :param key:
+            :return:
+            """
             # print(username, ip_address, port)
             # Запрос в таблицу пользователей на наличие там пользователя с таким именем
             check_users = self.session.query(self.db.ChatUsers).filter_by(name=username)
@@ -63,16 +75,11 @@ class ServerDB:
             if check_users.count():
                 user = check_users.first()
                 user.last_login = datetime.now()
-            # Если нет, то создаздаём нового пользователя
+                if user.pubkey != key:
+                    user.pubkey = key
+            # Если нету, то генерируем исключение
             else:
-                # Создаем экземпляр класса self.AllUsers, через который передаем данные в таблицу
-                user = self.db.ChatUsers(username)
-                self.session.add(user)
-                self.session.flush()
-                user_history = self.db.UsersHistory(user.id)
-                self.session.add(user_history)
-                # Комит здесь нужен, чтобы присвоился ID
-                self.session.commit()
+                raise ValueError('Пользователь не зарегистрирован.')
 
             # Теперь можно создать запись в таблицу активных пользователей о факте входа.
             # Создаем экземпляр класса self.ActiveUsers, через который передаем данные в таблицу
@@ -86,6 +93,70 @@ class ServerDB:
 
             # Сохраняем изменения
             self.session.commit()
+
+        def add_user(self, name, passwd_hash):
+            """
+            Метод регистрации пользователя.
+            Принимает имя и хэш пароля, создаёт запись в таблице статистики.
+            :param name:
+            :param passwd_hash:
+            :return:
+            """
+            # Создаем экземпляр класса self.AllUsers, через который передаем данные в таблицу
+            user = self.db.ChatUsers(name, passwd_hash)
+            self.session.add(user)
+            self.session.flush()
+            user_history = self.db.UsersHistory(user.id)
+            self.session.add(user_history)
+            # Комит здесь нужен, чтобы присвоился ID
+            self.session.commit()
+
+        def remove_user(self, name):
+            """
+            Метод удаляющий пользователя из базы.
+            :param name:
+            :return:
+            """
+            user = self.session.query(self.db.ChatUsers).filter_by(name=name).first()
+            self.session.query(self.db.ActiveUsers).filter_by(user=user.id).delete()
+            self.session.query(self.db.LoginHistory).filter_by(name=user.id).delete()
+            self.session.query(self.db.UsersContacts).filter_by(user=user.id).delete()
+            self.session.query(
+                self.db.UsersContacts).filter_by(
+                contact=user.id).delete()
+            self.session.query(self.db.UsersHistory).filter_by(user=user.id).delete()
+            self.session.query(self.db.ChatUsers).filter_by(name=name).delete()
+            self.session.commit()
+
+        def get_hash(self, name):
+            """
+            Метод получения хэша пароля пользователя.
+            :param name:
+            :return:
+            """
+            user = self.session.query(self.db.ChatUsers).filter_by(name=name).first()
+            return user.passwd_hash
+
+        def get_pubkey(self, name):
+            """
+            Метод получения публичного ключа пользователя.
+            :param name:
+            :return:
+            """
+            user = self.session.query(self.db.ChatUsers).filter_by(name=name).first()
+            return user.pubkey
+
+        def check_user(self, name):
+            """
+            Метод проверяющий существование пользователя.
+            :param name:
+            :return:
+            """
+            if self.session.query(self.db.ChatUsers).filter_by(name=name).count():
+                return True
+            else:
+                return False
+
 
         # Функция фиксирующая отключение пользователя
         def user_logout(self, username):
@@ -217,7 +288,9 @@ class ServerDB:
         # Создаём таблицу пользователей
         chat_users_table = Table('Chat_Users', self.metadata,
                                  Column('id', Integer, primary_key=True),
-                                 Column('name', String, unique=True)
+                                 Column('name', String, unique=True),
+                                 Column('passwd_hash', String),
+                                 Column('pubkey', Text)
                                  )
 
         # Создаём таблицу активных пользователей
