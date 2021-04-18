@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Common module &#8212; Lesson_7 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Launch module" href="launch.html" />
+    <link rel="prev" title="Client module" href="client_part.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="common-module">
+<h1>Common module<a class="headerlink" href="#common-module" title="Permalink to this headline">¶</a></h1>
+<p>Модуль общих для клиента и сервера утилит.
+Содержит декоратор, дескрипторы, определение ошибок, переменные, классы по отправке сообщений, метаклассыю</p>
+<p>Использование:</p>
+<p>Утилиты вызываются при необходимости с сервера или с клиента.</p>
+<div class="section" id="decorator-py">
+<h2>decorator.py<a class="headerlink" href="#decorator-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="common.decorator.Log">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">common.decorator.</span></code><code class="sig-name descname"><span class="pre">Log</span></code><a class="headerlink" href="#common.decorator.Log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс-декоратор</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.descriptors">
+<span id="descriptors-py"></span><h2>descriptors.py<a class="headerlink" href="#module-common.descriptors" title="Permalink to this headline">¶</a></h2>
+<p>Дескрипторы</p>
+<dl class="py class">
+<dt id="common.descriptors.CheckHost">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">common.descriptors.</span></code><code class="sig-name descname"><span class="pre">CheckHost</span></code><a class="headerlink" href="#common.descriptors.CheckHost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дескриптор для описания IP.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="common.descriptors.CheckPort">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">common.descriptors.</span></code><code class="sig-name descname"><span class="pre">CheckPort</span></code><a class="headerlink" href="#common.descriptors.CheckPort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дескриптор для описания порта.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.errors">
+<span id="errors-py"></span><h2>errors.py<a class="headerlink" href="#module-common.errors" title="Permalink to this headline">¶</a></h2>
+<p>Ошибки</p>
+<dl class="py exception">
+<dt id="common.errors.IncorrectDataRecivedError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">common.errors.</span></code><code class="sig-name descname"><span class="pre">IncorrectDataRecivedError</span></code><a class="headerlink" href="#common.errors.IncorrectDataRecivedError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Исключение  - некорректные данные получены от сокета.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="common.errors.JIMError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">common.errors.</span></code><code class="sig-name descname"><span class="pre">JIMError</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.errors.JIMError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Исключение - ошибка протокола JIM.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="common.errors.NonDictInputError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">common.errors.</span></code><code class="sig-name descname"><span class="pre">NonDictInputError</span></code><a class="headerlink" href="#common.errors.NonDictInputError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Исключение - аргумент функции не словарь.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="common.errors.ReqFieldMissingError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">common.errors.</span></code><code class="sig-name descname"><span class="pre">ReqFieldMissingError</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">missing_field</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.errors.ReqFieldMissingError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ошибка - отсутствует обязательное поле в принятом словаре.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="common.errors.ServerError">
+<em class="property"><span class="pre">exception</span> </em><code class="sig-prename descclassname"><span class="pre">common.errors.</span></code><code class="sig-name descname"><span class="pre">ServerError</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.errors.ServerError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Исключение - ошибка сервера.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="jimbase-py">
+<h2>jimbase.py<a class="headerlink" href="#jimbase-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="common.jimbase.JIMBase">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">common.jimbase.</span></code><code class="sig-name descname"><span class="pre">JIMBase</span></code><a class="headerlink" href="#common.jimbase.JIMBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс констант.</p>
+<dl class="py method">
+<dt id="common.jimbase.JIMBase.create_message">
+<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">create_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.jimbase.JIMBase.create_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Завернуто в декоратор.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="json-messenger-py">
+<h2>json_messenger.py<a class="headerlink" href="#json-messenger-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="common.json_messenger.JSONMessenger">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">common.json_messenger.</span></code><code class="sig-name descname"><span class="pre">JSONMessenger</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sock</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.json_messenger.JSONMessenger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс для приема и отправки сообщений между клиентом и сервером.</p>
+<dl class="py method">
+<dt id="common.json_messenger.JSONMessenger.get_message">
+<code class="sig-name descname"><span class="pre">get_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.json_messenger.JSONMessenger.get_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Завернуто в декоратор.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="common.json_messenger.JSONMessenger.send_message">
+<code class="sig-name descname"><span class="pre">send_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.json_messenger.JSONMessenger.send_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Завернуто в декоратор.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-common.metaclasses">
+<span id="metaclasses-py"></span><h2>metaclasses.py<a class="headerlink" href="#module-common.metaclasses" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="common.metaclasses.ClientInspector">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">common.metaclasses.</span></code><code class="sig-name descname"><span class="pre">ClientInspector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clssname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.metaclasses.ClientInspector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Метакласс для проверки корректности клиентов.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="common.metaclasses.ServerInspector">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">common.metaclasses.</span></code><code class="sig-name descname"><span class="pre">ServerInspector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clssname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#common.metaclasses.ServerInspector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Метакласс для проверки соответствия сервера.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Lesson_7</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="server_part.html">Server module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_part.html">Client module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Common module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#decorator-py">decorator.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-common.descriptors">descriptors.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-common.errors">errors.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jimbase-py">jimbase.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#json-messenger-py">json_messenger.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-common.metaclasses">metaclasses.py</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="launch.html">Launch module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logs.html">Logs module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="client_part.html" title="previous chapter">Client module</a></li>
+      <li>Next: <a href="launch.html" title="next chapter">Launch module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Tatiana Grishechkina.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/common.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

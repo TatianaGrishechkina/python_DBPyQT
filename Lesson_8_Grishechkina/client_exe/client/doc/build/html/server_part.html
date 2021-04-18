@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server module &#8212; Lesson_7 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Client module" href="client_part.html" />
+    <link rel="prev" title="Welcome to Lesson_7_Grishechkina’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="server-module">
+<h1>Server module<a class="headerlink" href="#server-module" title="Permalink to this headline">¶</a></h1>
+<p>Серверный модуль мессенджера. Обрабатывает словари – сообщения от клиентов. Также хранит публичные ключи клиентов.</p>
+<p>Использование:</p>
+<p>Модулю не нужны параметры, по умолчанию запускает сервер на 127.0.0.1:7777, берет данные с server.ini файла,
+который можно конфигурировать с программы.</p>
+<p>Пример запуска:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">server.py</span></code></p>
+<div class="section" id="server-py">
+<h2>server.py<a class="headerlink" href="#server-py" title="Permalink to this headline">¶</a></h2>
+<p>Содержит только функцию main(), которая:</p>
+<ul class="simple">
+<li><p>загружает файл конфигурации сервера server.ini,</p></li>
+<li><p>читает его при помощи класса ServerConfig() (путь - server_part.server_config.py),</p></li>
+<li><p>инициализирует базу данных (класс ServerDB(), путь - server_part.server_database.py),</p></li>
+<li><p>запускает сервер при помощи функции start (класс JIMServer() server_part.main_class.py),</p></li>
+<li><p>запускает поток обработки сообщений сервером,</p></li>
+<li><p>запускает пользовательский интерфейс через функцию run_server_gui (server_part.server_gui.py)</p></li>
+</ul>
+</div>
+<div class="section" id="main-class-py">
+<h2>main_class.py<a class="headerlink" href="#main-class-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="server_part.main_class.JIMServer">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.main_class.</span></code><code class="sig-name descname"><span class="pre">JIMServer</span></code><a class="headerlink" href="#server_part.main_class.JIMServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Основной класс сервера.</p>
+<dl class="py method">
+<dt id="server_part.main_class.JIMServer.authorize_user">
+<code class="sig-name descname"><span class="pre">authorize_user</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">messenger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.main_class.JIMServer.authorize_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Авторизация пользователя</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.main_class.JIMServer.process">
+<code class="sig-name descname"><span class="pre">process</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.main_class.JIMServer.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Основной цикл программы сервера</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.main_class.JIMServer.process_client_message">
+<code class="sig-name descname"><span class="pre">process_client_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.main_class.JIMServer.process_client_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Завернуто в декоратор.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.main_class.JIMServer.process_message">
+<code class="sig-name descname"><span class="pre">process_message</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.main_class.JIMServer.process_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Завернуто в декоратор.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.main_class.JIMServer.remove_client">
+<code class="sig-name descname"><span class="pre">remove_client</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sock</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.main_class.JIMServer.remove_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаление клиента.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.main_class.JIMServer.service_update_lists">
+<code class="sig-name descname"><span class="pre">service_update_lists</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.main_class.JIMServer.service_update_lists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Метод реализующий отправки сервисного сообщения 205 клиентам.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.main_class.JIMServer.start">
+<code class="sig-name descname"><span class="pre">start</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.main_class.JIMServer.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Метод запуска сервера</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="add-user-py">
+<h2>add_user.py<a class="headerlink" href="#add-user-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="server_part.add_user.RegisterUser">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.add_user.</span></code><code class="sig-name descname"><span class="pre">RegisterUser</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.add_user.RegisterUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс диалог регистрации пользователя на сервере.</p>
+<dl class="py method">
+<dt id="server_part.add_user.RegisterUser.save_data">
+<code class="sig-name descname"><span class="pre">save_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.add_user.RegisterUser.save_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Метод проверки правильности ввода и сохранения в базу нового пользователя.
+:return: Выход из программы, если произошла ошибка.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="remove-user-py">
+<h2>remove_user.py<a class="headerlink" href="#remove-user-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="server_part.remove_user.DelUserDialog">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.remove_user.</span></code><code class="sig-name descname"><span class="pre">DelUserDialog</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.remove_user.DelUserDialog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс - диалог выбора контакта для удаления.</p>
+<dl class="py method">
+<dt id="server_part.remove_user.DelUserDialog.all_users_fill">
+<code class="sig-name descname"><span class="pre">all_users_fill</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.remove_user.DelUserDialog.all_users_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Метод заполняющий список пользователей.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.remove_user.DelUserDialog.remove_user">
+<code class="sig-name descname"><span class="pre">remove_user</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.remove_user.DelUserDialog.remove_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Метод - обработчик удаления пользователя.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-server_part.server_config">
+<span id="server-config-py"></span><h2>server_config.py<a class="headerlink" href="#module-server_part.server_config" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="server_part.server_config.AbstractServerConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.server_config.</span></code><code class="sig-name descname"><span class="pre">AbstractServerConfig</span></code><a class="headerlink" href="#server_part.server_config.AbstractServerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Инициализация переменных конфигурационного файла.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_config.DefaultServerConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.server_config.</span></code><code class="sig-name descname"><span class="pre">DefaultServerConfig</span></code><a class="headerlink" href="#server_part.server_config.DefaultServerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Значения конфигурации по умолчанию.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_config.ServerConfig">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.server_config.</span></code><code class="sig-name descname"><span class="pre">ServerConfig</span></code><a class="headerlink" href="#server_part.server_config.ServerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс для конфигурации сервера.</p>
+<dl class="py method">
+<dt id="server_part.server_config.ServerConfig.read_default">
+<code class="sig-name descname"><span class="pre">read_default</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_config.ServerConfig.read_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чтение значений по умолчанию, если никаких не введено.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.server_config.ServerConfig.read_from_cmd">
+<code class="sig-name descname"><span class="pre">read_from_cmd</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_config.ServerConfig.read_from_cmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чтение с командной строки, например, server.py -p 8079 -a 192.168.1.2.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.server_config.ServerConfig.read_from_ini">
+<code class="sig-name descname"><span class="pre">read_from_ini</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ini</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_config.ServerConfig.read_from_ini" title="Permalink to this definition">¶</a></dt>
+<dd><p>Чтение конфигурации сервера с файла server.ini.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.server_config.ServerConfig.validate">
+<code class="sig-name descname"><span class="pre">validate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_config.ServerConfig.validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Проверка, что конфигурация корректна.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.server_config.ServerConfig.write_to_ini">
+<code class="sig-name descname"><span class="pre">write_to_ini</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ini</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_config.ServerConfig.write_to_ini" title="Permalink to this definition">¶</a></dt>
+<dd><p>Запись конфигурации сервера в файла server.ini.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="server-database-py">
+<h2>server_database.py<a class="headerlink" href="#server-database-py" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="server_part.server_database.ServerDB">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.server_database.</span></code><code class="sig-name descname"><span class="pre">ServerDB</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_database.ServerDB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс для инициализации базы данных сервера.</p>
+<dl class="py class">
+<dt id="server_part.server_database.ServerDB.ActiveUsers">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ActiveUsers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_database.ServerDB.ActiveUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подкласс - отображение таблицы активных пользователей:
+Экземпляр этого класса = запись в таблице ActiveUsers.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_database.ServerDB.ChatUsers">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ChatUsers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passwd_hash</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_database.ServerDB.ChatUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подкласс - отображение таблицы всех пользователей:
+Экземпляр этого класса = запись в таблице AllUsers.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_database.ServerDB.LoginHistory">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">LoginHistory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_database.ServerDB.LoginHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подкласс - отображение таблицы истории входов:
+Экземпляр этого класса = запись в таблице LoginHistory.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_database.ServerDB.UsersContacts">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">UsersContacts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_database.ServerDB.UsersContacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подкласс - отображение таблицы контактов пользователей.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_database.ServerDB.UsersHistory">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">UsersHistory</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_database.ServerDB.UsersHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подкласс отображение таблицы истории действий.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="server_part.server_database.ServerDB.create_session">
+<code class="sig-name descname"><span class="pre">create_session</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_database.ServerDB.create_session" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создаем сессию
+:return: создание сессии к БД</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-server_part.server_gui">
+<span id="server-gui-py"></span><h2>server_gui.py<a class="headerlink" href="#module-server_part.server_gui" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="server_part.server_gui.ConfigWindow">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.server_gui.</span></code><code class="sig-name descname"><span class="pre">ConfigWindow</span></code><a class="headerlink" href="#server_part.server_gui.ConfigWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс окна настроек.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_gui.HistoryWindow">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.server_gui.</span></code><code class="sig-name descname"><span class="pre">HistoryWindow</span></code><a class="headerlink" href="#server_part.server_gui.HistoryWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс окна с историей пользователей.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="server_part.server_gui.MainWindow">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">server_part.server_gui.</span></code><code class="sig-name descname"><span class="pre">MainWindow</span></code><a class="headerlink" href="#server_part.server_gui.MainWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс основного окна.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="server_part.server_gui.create_stat_model">
+<code class="sig-prename descclassname"><span class="pre">server_part.server_gui.</span></code><code class="sig-name descname"><span class="pre">create_stat_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_gui.create_stat_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>GUI - Функция реализующая заполнение таблицы историей сообщений.
+:param db_session: сессия БД
+:return: список</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="server_part.server_gui.gui_create_model">
+<code class="sig-prename descclassname"><span class="pre">server_part.server_gui.</span></code><code class="sig-name descname"><span class="pre">gui_create_model</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_session</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_gui.gui_create_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>GUI - Создание таблицы QModel, для отображения в окне программы.
+:param db_session: сессия БД
+:return: список</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="server_part.server_gui.run_server_gui">
+<code class="sig-prename descclassname"><span class="pre">server_part.server_gui.</span></code><code class="sig-name descname"><span class="pre">run_server_gui</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server_part.server_gui.run_server_gui" title="Permalink to this definition">¶</a></dt>
+<dd><p>Запуск GUI сервера.
+:param server: сервер
+:param config: конфигурация</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Lesson_7</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Server module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#server-py">server.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-class-py">main_class.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-user-py">add_user.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-user-py">remove_user.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-server_part.server_config">server_config.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#server-database-py">server_database.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-server_part.server_gui">server_gui.py</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client_part.html">Client module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common.html">Common module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch.html">Launch module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logs.html">Logs module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Lesson_7_Grishechkina’s documentation!</a></li>
+      <li>Next: <a href="client_part.html" title="next chapter">Client module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Tatiana Grishechkina.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/server_part.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
